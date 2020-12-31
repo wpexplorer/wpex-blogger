@@ -5,7 +5,7 @@
  * @package     Blogger WordPress theme
  * @subpackage  Includes
  * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
+ * @link        https://www.wpexplorer.com/
  * @since       2.0.0
  */
 
@@ -106,7 +106,7 @@ if ( ! function_exists( 'wpex_excerpt' ) ) {
 		else {
 			$output = wp_trim_words( strip_shortcodes( get_the_content( $id ) ), $length );
 			if ( $readmore == true ) {
-				$text			= apply_filters( 'wpex_readmore_text', __( 'continue reading', 'wpex' ) );
+				$text			= apply_filters( 'wpex_readmore_text', __( 'continue reading', 'wpex-blogger' ) );
 				$readmore_link	= '<span class="wpex-readmore"><a href="'. get_permalink( $id ) .'" title="'. $text .'" rel="bookmark">'. $text .' &rarr;</a></span>';
 				$output .= apply_filters( 'wpex_readmore_link', $readmore_link );
 			}
@@ -197,9 +197,9 @@ if ( ! function_exists( 'wpex_pagejump' ) ) {
 		// Display next/previous pagination
 		if ( 1 != $pages ) {
 			echo '<div class="post-navigation clr"><div class="alignleft">';
-				previous_posts_link( '&larr; ' . __( 'Newer Posts', 'wpex' ) );
+				previous_posts_link( '&larr; ' . __( 'Newer Posts', 'wpex-blogger' ) );
 			echo '</div><div class="alignright">';
-				next_posts_link( __( 'Older Posts', 'wpex' ) .' &rarr;' );
+				next_posts_link( __( 'Older Posts', 'wpex-blogger' ) .' &rarr;' );
 			echo '</div></div>';
 		}
 		

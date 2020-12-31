@@ -2,11 +2,8 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package     Blogger WordPress theme
- * @subpackage  Templates
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       1.0.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
 
 get_header(); ?>
@@ -18,7 +15,7 @@ get_header(); ?>
 			<article id="error-page" class="boxed clr">	
 				<h1 id="error-page-title">404</h1>			
 				<p id="error-page-text">
-				<?php _e( 'Unfortunately, the page you tried accessing could not be retrieved.', 'wpex' ); ?>
+				<?php _e( 'Unfortunately, the page you tried accessing could not be retrieved.', 'wpex-blogger' ); ?>
 				</p>
 			</article><!-- #error-page -->
 			

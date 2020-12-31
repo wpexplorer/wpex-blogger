@@ -2,11 +2,8 @@
 /**
  * Template Name: Fullwidth
  *
- * @package     Blogger WordPress theme
- * @subpackage  Templates
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       1.0.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
 
 get_header(); ?>

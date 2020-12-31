@@ -2,9 +2,8 @@
 /**
  * Displays the post entry video
  *
- * @package		WordPress
- * @subpackage	Corporate WPExplorer Theme
- * @since		Corporate 1.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
 
 // Exit if accessed directly
@@ -12,18 +11,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Get video
-$video = get_post_meta( get_the_ID(), 'wpex_post_video', true );
-$video = wp_oembed_get( $video );
+$video = apply_filters( 'wpex_post_video', get_post_meta( get_the_ID(), 'wpex_post_video', true ) );
 
-// If there isn't any video display thumbnail
-if ( ! $video ) {
-	get_template_part( 'partials/entry-thumbnail' );
-	return;
-} ?>
+if ( ! empty( $video ) && is_string( $video ) ) { ?>
 
-<div class="loop-entry-video wpex-video-embed clr">
-	<?php
-	// Display video
-	echo $video; ?>
-</div><!-- .loop-entry-video -->
+	<div class="loop-entry-video wpex-video-embed">
+		<?php echo wp_oembed_get( $video ); ?>
+	</div><!-- .loop-entry-video -->
+
+<?php } else {
+
+	get_template_part( 'partials/entry/thumbnail' );
+
+}

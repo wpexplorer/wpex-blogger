@@ -2,11 +2,8 @@
 /**
  * Default post entry layout
  *
- * @package     Blogger WordPress theme
- * @subpackage  Partials
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       1.0.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
 
 // Exit if accessed directly
@@ -17,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Get post format
 $format = get_post_format(); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'loop-entry', 'clr', 'boxed' ) ); ?>>
 
 	<?php
 	// Display video

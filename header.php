@@ -2,12 +2,15 @@
 /**
  * The Header for our theme.
  *
- * @package    Blogger WordPress theme
- * @subpackage Templates
- * @author     Alexander Clarke
- * @link       http://www.wpexplorer.com
- * @since      2.0.0
+ * @package WPEX Blogger
+ * @since 1.0
  */
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -20,11 +23,13 @@
 
 <body <?php body_class(); ?>>
 
+<?php wp_body_open(); ?>
+
 <?php get_template_part( 'partials/header/nav' ); ?>
 
-<div id="header-wrap" class="clr">
+<div id="header-wrap">
 
-    <header id="header" class="site-header container clr" role="banner">
+    <header id="header" class="site-header container" role="banner">
 
         <?php
         // Header logo + site description
@@ -37,5 +42,5 @@
     </header><!-- #header -->
 
 </div><!-- #header-wrap -->
-		
-		<div id="main" class="site-main clr container">
+
+	<div id="main" class="site-main clr container">

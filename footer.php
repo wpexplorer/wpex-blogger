@@ -2,25 +2,32 @@
 /**
  * The template for displaying the footer.
  *
- * @package     Blogger WordPress theme
- * @subpackage  Templates
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       1.0.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 ?>
 
 	</div><!-- #main-content -->
 
-	<div id="footer-wrap" class="site-footer clr">
+	<?php if ( get_theme_mod( 'wpex_footer_widgets', true ) ) { ?>
 
-		<div id="footer" class="clr container">
+		<div id="footer-wrap" class="site-footer clr">
 
-			<?php get_template_part( 'partials/footer/widgets' ); ?>
+			<div id="footer" class="clr container">
 
-		</div><!-- #footer -->
+				<?php get_template_part( 'partials/footer/widgets' ); ?>
 
-	</div><!-- #footer-wrap -->
+			</div><!-- #footer -->
+
+		</div><!-- #footer-wrap -->
+
+	<?php } ?>
 
 	<?php get_template_part( 'partials/footer/copyright' ); ?>
 

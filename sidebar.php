@@ -2,12 +2,14 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package     Blogger WordPress theme
- * @subpackage  Templates
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       1.0.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 if ( is_active_sidebar( 'sidebar' ) ) : ?>
 
@@ -15,12 +17,14 @@ if ( is_active_sidebar( 'sidebar' ) ) : ?>
 
 		<div class="sidebar-inner">
 
-			<div class="widget-area">
-				<?php dynamic_sidebar( 'sidebar' ); ?>
-			</div><!-- .widget-area -->
+			<div class="widget-area"><?php
+
+				dynamic_sidebar( 'sidebar' );
+
+			?></div><!-- .widget-area -->
 
 		</div><!-- .sidebar-inner -->
-		
+
 	</aside><!-- #secondary -->
 
 <?php endif; ?>

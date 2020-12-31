@@ -2,33 +2,48 @@
 /**
  * Displays post entry content
  *
- * @package     Blogger WordPress theme
- * @subpackage  Partials
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       1.0.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-} ?>
+}
+
+$display = get_theme_mod( 'wpex_entry_content_excerpt', 'excerpt' );
+
+?>
 
 <div class="loop-entry-content entry clr">
 
 	<?php
-	// Display full content
-	if ( 'content' == get_theme_mod( 'wpex_entry_content_excerpt', 'excerpt' ) ) {
+	switch ( $display ) :
 
-		the_content();
-	}
-	// Display custom excerpt
-	else {
+		case 'the_excerpt':
 
-		$length = intval( get_theme_mod( 'wpex_excerpt_length', 50 ) );
-		$length = $length ? $length : '50';
-		wpex_excerpt( $length, get_theme_mod( 'wpex_blog_readmore', true ) );
-		
-	} ?>
+			the_excerpt();
+
+			break;
+
+		case 'the_content':
+		case 'content':
+
+			the_content();
+
+			break;
+
+		default:
+
+			$length = absint( get_theme_mod( 'wpex_excerpt_length', 50 ) );
+
+			if ( ! empty( $length ) ) {
+				wpex_excerpt( $length, get_theme_mod( 'wpex_blog_readmore', true ) );
+			}
+
+			break;
+
+	endswitch;
+	?>
 
 </div><!-- .loop-entry-content -->

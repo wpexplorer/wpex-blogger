@@ -11,352 +11,294 @@
  * file is included before the parent theme's file, so the child theme
  * functions would be used.
  *
- *
  * For more information on hooks, actions, and filters,
  * see http://codex.wordpress.org/Plugin_API
  *
  * @package    Blogger WordPress theme
  * @subpackage Templates
  * @author     Alexander Clarke
- * @link       http://www.wpexplorer.com
+ * @link       https://www.wpexplorer.com/
  * @since      2.0.0
  */
 
-class WPEX_Theme_Class {
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
-	/**
-	 * Main Theme Class Constructor
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 */
-	public function __construct() {
+function wpex_theme_info() {
+	return array(
+		'name'    => 'WPEX Blogger',
+		'slug'    => 'wpex-blogger',
+		'url'     => 'https://www.wpexplorer.com/blogger-free-wordpress-theme/',
+		'support' => 'https://github.com/wpexplorer/wpex-blogger/issues',
+	);
+}
 
-		// Define Contstants
-		add_action( 'after_setup_theme', array( &$this, 'constants' ), 0 );
+if ( ! class_exists( 'WPEX_Blogger_Theme' ) ) {
 
-		// Load theme functions
-		add_action( 'after_setup_theme', array( &$this, 'functions' ), 1 );
+	class WPEX_Blogger_Theme {
 
-		// Load premium theme functions
-		add_action( 'after_setup_theme', array( &$this, 'premium' ), 2 );
+		/**
+		 * Main Theme Class Constructor
+		 *
+		 * @since 2.0.0
+		 */
+		public function __construct() {
 
-		// Load Classes
-		add_action( 'after_setup_theme', array( &$this, 'classes' ), 3 );
+			// Define Contstants
+			$this->constants();
 
-		// Theme setup: Adds theme-support, image sizes, menus, etc.
-		add_action( 'after_setup_theme', array( &$this, 'setup' ), 10 );
+			// Load theme functions
+			$this->includes();
 
-		// Flush rewrite rules on theme switch
-		add_action( 'after_switch_theme', array( &$this, 'flush_rewrite_rules' ) );
+			// Theme setup: Adds theme-support, image sizes, menus, etc.
+			add_action( 'after_setup_theme', array( $this, 'setup' ) );
 
-		// Load front-end scripts
-		add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_scripts' ) );
+			// Load front-end scripts
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		// Register sidebar widget areas
-		add_action( 'widgets_init', array( &$this, 'register_sidebars' ) );
+			// Register sidebar widget areas
+			add_action( 'widgets_init', array( $this, 'register_sidebars' ) );
 
-		// Change more text
-		add_filter( 'the_content_more_link', array( &$this, 'excerpt_more' ) );
+			// Change more text
+			add_filter( 'the_content_more_link', array( $this, 'excerpt_more' ) );
 
-		// Add html5.js to wp_head
-		add_filter( 'wp_head', array( &$this, 'html5_js' ) );
-
-	}
-
-	/**
-	 * Define Constants
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 */
-	public function constants() {
-		define( 'WPEX_THEME_VERSION', $this->theme_version() );
-		define( 'WPEX_INCLUDES_DIR', get_template_directory() .'/inc/' );
-		define( 'WPEX_CLASSES_DIR', WPEX_INCLUDES_DIR .'classes/' );
-		define( 'WPEX_JS_DIR_URI', get_template_directory_uri(). '/js/' );
-		define( 'WPEX_CSS_DIR_URI', get_template_directory_uri(). '/css/' );
-	}
-
-	/**
-	 * Returns current theme version
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 */
-	public function theme_version() {
-
-		// Get theme data
-		$theme = wp_get_theme();
-
-		// Return theme version
-		return $theme->get( 'Version' );
-
-	}
-
-	/**
-	 * Load required theme functions
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 */
-	public function functions() {
-
-		// Configures post meta via cmb_meta_boxes filter
-		require_once ( WPEX_INCLUDES_DIR .'meta-config.php' );
-
-		// Include Customizer functions
-		require_once ( WPEX_INCLUDES_DIR .'customizer/general.php' );
-
-		// Helper functions
-		require_once ( WPEX_INCLUDES_DIR .'helpers.php' );
-
-		// Adds classes to post entries
-		require_once ( WPEX_INCLUDES_DIR .'post-classes.php' );
-
-		// Comments output
-		require_once ( WPEX_INCLUDES_DIR .'comments-callback.php' );
-
-		// MCE Editor tweaks
-		if ( is_admin() ) {
-			require_once( WPEX_INCLUDES_DIR .'mce-tweaks.php' );
 		}
 
-		// Import / Export
-		require_once ( WPEX_INCLUDES_DIR .'import-export.php' );
+		/**
+		 * Define Constants
+		 *
+		 * @since 2.0.0
+		 */
+		public function constants() {
+			define( 'WPEX_THEME_VERSION', $this->theme_version() );
+			define( 'WPEX_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'inc/' );
+			define( 'WPEX_CLASSES_DIR', WPEX_INCLUDES_DIR .'classes/' );
+			define( 'WPEX_JS_DIR_URI', trailingslashit( get_template_directory_uri() ) . 'assets/js/' );
+			define( 'WPEX_CSS_DIR_URI', trailingslashit( get_template_directory_uri() ) . 'assets/css/' );
+		}
 
-	}
+		/**
+		 * Returns current theme version
+		 *
+		 * @since 2.0.0
+		 */
+		public function theme_version() {
 
-	/**
-	 * Load premium theme functions and non-premium functions
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 */
-	public function premium() {
+			// Get theme data
+			$theme = wp_get_theme();
 
-		// Check for premium files
-		$files = glob( get_template_directory() .'/premium/*.php' );
+			// Return theme version
+			return $theme->get( 'Version' );
 
-		// Load premium files if they exist
-		if ( $files ) {
-			foreach ( $files as $file ) {
-				require_once( $file );
+		}
+
+		/**
+		 * Load required theme functions
+		 *
+		 * @since 2.0.0
+		 */
+		public function includes() {
+
+			require_once ( WPEX_INCLUDES_DIR .'helpers.php' );
+			require_once ( WPEX_INCLUDES_DIR .'post-meta.php' );
+			require_once ( WPEX_INCLUDES_DIR .'comments-callback.php' );
+			require_once ( WPEX_INCLUDES_DIR .'customizer/general.php' );
+
+			if ( is_admin() ) {
+				if ( ! defined( 'WPEX_DISABLE_THEME_DASHBOARD_FEEDS' ) ) {
+					require_once get_parent_theme_file_path( '/admin/dashboard-feed.php' );
+				}
+				if ( ! defined( 'WPEX_DISABLE_THEME_ABOUT_PAGE' ) ) {
+					require_once get_parent_theme_file_path( '/admin/about.php' );
+				}
 			}
+
 		}
 
-		// Otherwise load dashboard feed and welcome message for non-premium users
-		else {
-			require_once( WPEX_INCLUDES_DIR .'dashboard-feed.php');
-			require_once( WPEX_INCLUDES_DIR .'welcome.php');
+		/**
+		 * Theme Setup
+		 *
+		 * @since 2.0.0
+		 */
+		public function setup() {
+
+			// Set content width variable
+			global $content_width;
+			if ( ! isset( $content_width ) ) {
+				$content_width = 590;
+			}
+
+			// Register navigation menus
+			register_nav_menus ( array(
+				'main_menu'	=> esc_html__( 'Main', 'wpex-blogger' ),
+			) );
+
+			// Localization support
+			load_theme_textdomain( 'wpex-blogger', get_template_directory() . '/languages' );
+
+			// Add theme support
+			add_theme_support( 'post-formats', array( 'video' ) );
+			add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
+			add_theme_support( 'post-thumbnails' );
+			add_theme_support( 'title-tag' );
+			add_theme_support( 'automatic-feed-links' );
+			add_theme_support( 'custom-background' );
+			add_theme_support( 'post-thumbnails' );
+
+			// Add image sizes
+			add_image_size(
+				'wpex-entry',
+				get_theme_mod( 'wpex_entry_thumbnail_width', 9999 ),
+				get_theme_mod( 'wpex_entry_thumbnail_height', 9999 ),
+				get_theme_mod( 'wpex_entry_thumbnail_crop', false )
+			);
+
+			add_image_size(
+				'wpex-post',
+				get_theme_mod( 'wpex_post_thumbnail_width', 9999 ),
+				get_theme_mod( 'wpex_post_thumbnail_height', 9999 ),
+				get_theme_mod( 'wpex_post_thumbnail_crop', false )
+			);
+
 		}
 
-	}
+		/**
+		 * Load front-end scripts
+		 *
+		 * @since 2.0.0
+		 *
+		 * @link https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts
+		 */
+		public function enqueue_scripts() {
 
-	/**
-	 * Load theme classes
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 */
-	public function classes() {
+			// CSS
+			wp_enqueue_style(
+				'wpex-style',
+				get_stylesheet_uri(),
+				false,
+				WPEX_THEME_VERSION
+			);
 
-		// Metaboxes
-		if ( ! class_exists( 'cmb_Meta_Box' ) ) {
-			require_once ( WPEX_CLASSES_DIR .'custom-metaboxes-and-fields/init.php' );
+			wp_enqueue_style(
+				'wpex-font-awesome',
+				WPEX_CSS_DIR_URI . 'font-awesome.min.css',
+				false,
+				'4.3.0'
+			);
+
+			wp_enqueue_style(
+				'wpex-google-fonts',
+				'https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap'
+			);
+
+			// jQuery
+			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+				wp_enqueue_script( 'comment-reply' );
+			}
+
+			wp_enqueue_script(
+				'superfish',
+				WPEX_JS_DIR_URI . 'jquery.superfish.js',
+				array( 'jquery' ),
+				'1.7.4',
+				true
+			);
+
+			wp_enqueue_script(
+				'sidr',
+				WPEX_JS_DIR_URI . 'jquery.sidr.js',
+				array( 'jquery' ),
+				'1.0',
+				true
+			);
+
+			wp_enqueue_script(
+				'wpex-blogger',
+				WPEX_JS_DIR_URI . 'wpex-blogger.js',
+				array( 'jquery', 'superfish', 'sidr' ),
+				WPEX_THEME_VERSION,
+				true
+			);
+
 		}
 
-	}
+		/**
+		 * Registers sidebars
+		 *
+		 * @since 2.0.0
+		 */
+		public function register_sidebars() {
 
-	/**
-	 * Theme Setup
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 */
-	public function setup() {
+			// Sidebar
+			register_sidebar( array(
+				'name'			=> esc_html__( 'Sidebar', 'wpex-blogger' ),
+				'id'			=> 'sidebar',
+				'description'	=> esc_html__( 'Widgets in this area are used in the sidebar region.', 'wpex-blogger' ),
+				'before_widget'	=> '<div class="sidebar-widget %2$s clr">',
+				'after_widget'	=> '</div>',
+				'before_title'	=> '<h5 class="widget-title">',
+				'after_title'	=> '</h5>',
+			) );
 
-		// Set content width variable
-		global $content_width;
-		if ( ! isset( $content_width ) ) {
-			$content_width = 590;
+			// Footers
+			if ( get_theme_mod( 'wpex_footer_widgets', true ) ) {
+
+				// Footer 1
+				register_sidebar( array(
+					'name'			=> esc_html__( 'Footer 1', 'wpex-blogger' ),
+					'id'			=> 'footer-one',
+					'description'	=> esc_html__( 'Widgets in this area are used in the first footer region.', 'wpex-blogger' ),
+					'before_widget'	=> '<div class="footer-widget %2$s clr">',
+					'after_widget'	=> '</div>',
+					'before_title'	=> '<h6 class="widget-title">',
+					'after_title'	=> '</h6>',
+				) );
+
+				// Footer 2
+				register_sidebar( array(
+					'name'			=> esc_html__( 'Footer 2', 'wpex-blogger' ),
+					'id'			=> 'footer-two',
+					'description'	=> esc_html__( 'Widgets in this area are used in the second footer region.', 'wpex-blogger' ),
+					'before_widget'	=> '<div class="footer-widget %2$s clr">',
+					'after_widget'	=> '</div>',
+					'before_title'	=> '<h6 class="widget-title">',
+					'after_title'	=> '</h6>',
+				) );
+
+				// Footer 3
+				register_sidebar( array(
+					'name'			=> esc_html__( 'Footer 3', 'wpex-blogger' ),
+					'id'			=> 'footer-three',
+					'description'	=> esc_html__( 'Widgets in this area are used in the third footer region.', 'wpex-blogger' ),
+					'before_widget'	=> '<div class="footer-widget %2$s clr">',
+					'after_widget'	=> '</div>',
+					'before_title'	=> '<h6 class="widget-title">',
+					'after_title'	=> '</h6>',
+				) );
+
+			}
+
 		}
 
-		// Register navigation menus
-		register_nav_menus (
-			array(
-				'main_menu'	=> __( 'Main', 'wpex' ),
-			)
-		);
-		
-		// Localization support
-		load_theme_textdomain( 'wpex', get_template_directory() .'/languages' );
-		
-		// Enable some useful post formats for the blog
-		add_theme_support( 'post-formats', array( 'video' ) );
-			
-		// Add theme support
-		add_theme_support( 'title-tag' );
-		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'custom-background' );
-		add_theme_support( 'post-thumbnails' );
+		/**
+		 * Change the excerpt more text
+		 *
+		 * @since 2.0.0
+		 */
+		public function excerpt_more() {
+			global $post;
+			if ( get_theme_mod( 'wpex_blog_readmore', true ) ) {
+				return '&hellip;<span class="wpex-readmore"><a href="'. get_permalink( $post->ID ) .'">'. esc_html__( 'continue reading', 'wpex-blogger' ) .' &rarr;</a></span>';
+			} else {
+				return '&hellip;';
+			}
 
-		// Add image sizes
-		add_image_size( 'wpex-entry', 590, 9999, false );
-		add_image_size( 'wpex-post', 590, 9999, false );
-
-	}
-
-	/**
-	 * Flush rewrite rules on theme switch to prevent 404 errors on built-in post types
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 */
-	public function flush_rewrite_rules() {
-		if ( function_exists( 'flush_rewrite_rules' ) ) {
-			flush_rewrite_rules();
-		}
-	}
-
-	/**
-	 * Load front-end scripts
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 *
-	 * @link	https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts
-	 */
-	public function enqueue_scripts() {
-
-		// CSS
-		wp_enqueue_style(
-			'wpex-style',
-			get_stylesheet_uri(),
-			false,
-			WPEX_THEME_VERSION
-		);
-		wp_enqueue_style(
-			'wpex-responsive',
-			WPEX_CSS_DIR_URI .'responsive.css',
-			array( 'wpex-style' ),
-			WPEX_THEME_VERSION
-		);
-		wp_enqueue_style(
-			'wpex-font-awesome',
-			WPEX_CSS_DIR_URI .'font-awesome.min.css',
-			false,
-			'4.3.0'
-		);
-		wp_enqueue_style(
-			'wpex-google-font-noto-serif',
-			'http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic'
-		);
-		wp_enqueue_style(
-			'wpex-google-font-source-sans-pro',
-			'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic&subset=latin,vietnamese,latin-ext'
-		);
-
-		// jQuery
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
-		}
-		wp_enqueue_script(
-			'wpex-plugins',
-			WPEX_JS_DIR_URI .'plugins.js',
-			array( 'jquery' ),
-			WPEX_THEME_VERSION,
-			true
-		);
-		wp_enqueue_script(
-			'wpex-global',
-			WPEX_JS_DIR_URI .'global.js',
-			array( 'jquery', 'wpex-plugins' ),
-			WPEX_THEME_VERSION,
-			true
-		);
-
-	}
-
-	/**
-	 * Registers sidebars
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 */
-	public function register_sidebars() {
-
-		// Sidebar
-		register_sidebar( array(
-			'name'			=> __( 'Sidebar', 'wpex' ),
-			'id'			=> 'sidebar',
-			'description'	=> __( 'Widgets in this area are used in the sidebar region.', 'wpex' ),
-			'before_widget'	=> '<div class="sidebar-widget %2$s clr">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<h5 class="widget-title">',
-			'after_title'	=> '</h5>',
-		) );
-
-		// Footer 1
-		register_sidebar( array(
-			'name'			=> __( 'Footer 1', 'wpex' ),
-			'id'			=> 'footer-one',
-			'description'	=> __( 'Widgets in this area are used in the first footer region.', 'wpex' ),
-			'before_widget'	=> '<div class="footer-widget %2$s clr">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<h6 class="widget-title">',
-			'after_title'	=> '</h6>',
-		) );
-
-		// Footer 2
-		register_sidebar( array(
-			'name'			=> __( 'Footer 2', 'wpex' ),
-			'id'			=> 'footer-two',
-			'description'	=> __( 'Widgets in this area are used in the second footer region.', 'wpex' ),
-			'before_widget'	=> '<div class="footer-widget %2$s clr">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<h6 class="widget-title">',
-			'after_title'	=> '</h6>',
-		) );
-
-		// Footer 3
-		register_sidebar( array(
-			'name'			=> __( 'Footer 3', 'wpex' ),
-			'id'			=> 'footer-three',
-			'description'	=> __( 'Widgets in this area are used in the third footer region.', 'wpex' ),
-			'before_widget'	=> '<div class="footer-widget %2$s clr">',
-			'after_widget'	=> '</div>',
-			'before_title'	=> '<h6 class="widget-title">',
-			'after_title'	=> '</h6>',
-		) );
-
-	}
-
-	/**
-	 * Change the excerpt more text
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 */
-	public function excerpt_more() {
-		global $post;
-		if ( get_theme_mod( 'wpex_blog_readmore', true ) ) {
-			return '&hellip;<span class="wpex-readmore"><a href="'. get_permalink( $post->ID ) .'" title="'. __( 'Read More', 'wpex' ) .'" rel="bookmark">'. __( 'continue reading', 'wpex' ) .' &rarr;</a></span>';
-		} else {
-			return '&hellip;';
 		}
 
 	}
 
-	/**
-	 * Add html5 script to header for IE browsers
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 */
-	public function html5_js() {
-		echo '<!--[if lt IE 9]><script src="'. WPEX_JS_DIR_URI .'html5.js"></script><![endif]-->';
-	}
+	new WPEX_Blogger_Theme;
 
 }
-$blogger_theme_setup = new WPEX_Theme_Class;

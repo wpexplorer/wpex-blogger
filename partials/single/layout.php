@@ -1,13 +1,16 @@
 <?php
 /**
- * Single post layout
+ * Single post layout.
  *
- * @package     Blogger WordPress theme
- * @subpackage  Partials
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       1.0.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 ?>
 
 
@@ -15,6 +18,7 @@
 	<?php get_template_part( 'partials/single/media' ); ?>
 	<?php get_template_part( 'partials/single/header' ); ?>
 	<?php get_template_part( 'partials/single/content' ); ?>
+	<?php get_template_part( 'partials/single/post-tags' ); ?>
 	<?php get_template_part( 'partials/link-pages' ); ?>
 	<?php get_template_part( 'partials/edit-post' ); ?>
 </article>

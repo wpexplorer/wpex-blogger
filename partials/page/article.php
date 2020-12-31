@@ -2,17 +2,16 @@
 /**
  * Outputs page article
  *
- * @package     Blogger WordPress theme
- * @subpackage  Partials
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       1.0.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
-} ?>
+}
+
+?>
 
 <article class="entry clr">
 

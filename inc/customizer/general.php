@@ -1,148 +1,176 @@
 <?php
 /**
- * General theme options
+ * General theme options.
  *
- * @package     Blogger WordPress theme
- * @subpackage  Customizer
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       2.0.0
+ * @package WPEX Blogger
+ * @since 2.0.0
  */
 
 function wpex_customizer_general($wp_customize) {
 
 	// Theme Settings Section
 	$wp_customize->add_section( 'wpex_general' , array(
-		'title'		=> __( 'Theme Settings', 'wpex' ),
-		'priority'	=> 200,
+		'title'		=> esc_html__( 'Theme Settings', 'wpex-blogger' ),
 	) );
 
 	// Logo Image
 	$wp_customize->add_setting( 'wpex_logo', array(
 		'type'              => 'theme_mod',
-		'sanitize_callback' => false,
+		'sanitize_callback' => 'esc_url',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpex_logo', array(
-		'label'		=> __( 'Image Logo', 'wpex' ),
+		'label'		=> esc_html__( 'Image Logo', 'wpex-blogger' ),
 		'section'	=> 'wpex_general',
 		'settings'	=> 'wpex_logo',
-		'priority'	=> '1',
 	) ) );
+
+	// Logo Image Dimensions
+	$wp_customize->add_setting( 'wpex_logo_dims', array(
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'wpex_logo_dims', array(
+		'label'		=> esc_html__( 'Image Logo Dimensions', 'wpex-blogger' ),
+		'section'	=> 'wpex_general',
+		'settings'	=> 'wpex_logo_dims',
+		'description' => esc_html__( 'Can be used to constrain a large image or SVG to a specific size. Use format WidthxHeight (Ex: 400x200)', 'wpex-blogger' ),
+	) );
 
 	// Enable/Disable Navigation
 	$wp_customize->add_setting( 'wpex_nav', array(
 		'type'              => 'theme_mod',
-		'sanitize_callback' => false,
-		'default'           => '1',
+		'sanitize_callback' => 'wp_validate_boolean',
+		'default'           => true,
 	) );
 
 	$wp_customize->add_control( 'wpex_nav', array(
-		'label'		=> __( 'Top Navigation', 'wpex' ),
+		'label'		=> esc_html__( 'Top Navigation', 'wpex-blogger' ),
 		'section'	=> 'wpex_general',
 		'settings'	=> 'wpex_nav',
 		'type'		=> 'checkbox',
-		'priority'	=> '3',
+	) );
+
+	// Enable/Disable Footer Widgets
+	$wp_customize->add_setting( 'wpex_footer_widgets', array(
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'wp_validate_boolean',
+		'default'           => true,
+	) );
+
+	$wp_customize->add_control( 'wpex_footer_widgets', array(
+		'label'		=> esc_html__( 'Footer Widgets', 'wpex-blogger' ),
+		'section'	=> 'wpex_general',
+		'settings'	=> 'wpex_footer_widgets',
+		'type'		=> 'checkbox',
 	) );
 
 	// Enable/Disable Social
 	$wp_customize->add_setting( 'wpex_header_social', array(
 		'type'              => 'theme_mod',
-		'sanitize_callback' => false,
-		'default'           => '1',
+		'sanitize_callback' => 'wp_validate_boolean',
+		'default'           => true,
 	) );
 
 	$wp_customize->add_control( 'wpex_header_social', array(
-		'label'		=> __( 'Social Links', 'wpex' ),
+		'label'		=> esc_html__( 'Social Links', 'wpex-blogger' ),
 		'section'	=> 'wpex_general',
 		'settings'	=> 'wpex_header_social',
 		'type'		=> 'checkbox',
-		'priority'	=> '4',
 	) );
 
 	// Enable/Disable Readmore
 	$wp_customize->add_setting( 'wpex_blog_readmore', array(
 		'type'              => 'theme_mod',
-		'sanitize_callback' => false,
-		'default'           => '1',
+		'sanitize_callback' => 'wp_validate_boolean',
+		'default'           => true,
 	) );
 
 	$wp_customize->add_control( 'wpex_blog_readmore', array(
-		'label'		=> __( 'Read More Link', 'wpex' ),
+		'label'		=> esc_html__( 'Read More Link', 'wpex-blogger' ),
 		'section'	=> 'wpex_general',
 		'settings'	=> 'wpex_blog_readmore',
 		'type'		=> 'checkbox',
-		'priority'	=> '5',
 	) );
 
 	// Enable/Disable Featured Images on Posts
 	$wp_customize->add_setting( 'wpex_blog_post_thumb', array(
 		'type'              => 'theme_mod',
-		'sanitize_callback' => false,
-		'default'           => '1',
+		'sanitize_callback' => 'wp_validate_boolean',
+		'default'           => true,
 	) );
 
 	$wp_customize->add_control( 'wpex_blog_post_thumb', array(
-		'label'		=> __( 'Featured Image on Posts', 'wpex' ),
+		'label'		=> esc_html__( 'Featured Image on Posts', 'wpex-blogger' ),
 		'section'	=> 'wpex_general',
 		'settings'	=> 'wpex_blog_post_thumb',
 		'type'		=> 'checkbox',
-		'priority'	=> '6',
+	) );
+
+	// Enable/Disable Pos Tags
+	$wp_customize->add_setting( 'wpex_has_post_tags', array(
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'wp_validate_boolean',
+		'default'           => true,
+	) );
+
+	$wp_customize->add_control( 'wpex_has_post_tags', array(
+		'label'		=> esc_html__( 'Display Post tags?', 'wpex-blogger' ),
+		'section'	=> 'wpex_general',
+		'settings'	=> 'wpex_has_post_tags',
+		'type'		=> 'checkbox',
 	) );
 
 	// Display Excerpts
 	$wp_customize->add_setting( 'wpex_entry_content_excerpt', array(
 		'type'              => 'theme_mod',
-		'sanitize_callback' => false,
+		'sanitize_callback' => 'wpex_sanitize_entry_display',
 		'default'           => 'excerpt',
 	) );
 
 	$wp_customize->add_control( 'wpex_entry_content_excerpt', array(
-		'label'		=> __( 'Entries Display?', 'wpex' ),
+		'label'		=> esc_html__( 'Entries Display?', 'wpex-blogger' ),
 		'section'	=> 'wpex_general',
 		'settings'	=> 'wpex_entry_content_excerpt',
 		'type'		=> 'select',
 		'choices'	=> array(
-			'excerpt' => __( 'The Excerpt', 'wpex' ),
-			'content' => __( 'The Content', 'wpex' ),
+			'excerpt' => esc_html__( 'Custom Excerpt', 'wpex-blogger' ),
+			'content' => esc_html__( 'Full Post Content', 'wpex-blogger' ),
+			'the_excerpt' => esc_html__( 'WordPress Excerpt', 'wpex-blogger' ),
 		),
-		'priority'	=> '8',
 	) );
 
 	// Excerpt lengths
 	$wp_customize->add_setting( 'wpex_excerpt_length', array(
 		'type'              => 'theme_mod',
-		'sanitize_callback' => false,
+		'sanitize_callback' => 'absint',
 		'default'           => '50',
 	) );
 
 	$wp_customize->add_control( 'wpex_excerpt_length', array(
-		'label'		=> __( 'Excerpt Length', 'wpex' ),
+		'label'		=> esc_html__( 'Excerpt Length', 'wpex-blogger' ),
 		'section'	=> 'wpex_general',
 		'settings'	=> 'wpex_excerpt_length',
 		'type'		=> 'text',
-		'priority'	=> '9',
 	) );
 
 	// Copyright
 	$wp_customize->add_setting( 'wpex_copyright', array(
 		'type'              => 'theme_mod',
-		'sanitize_callback' => false,
-		'default'           => 'Powered by <a href=\"http://www.wordpress.org\" title="WordPress" target="_blank">WordPress</a> and <a href=\"http://themeforest.net/item/total-responsive-multipurpose-wordpress-theme/6339019?ref=WPExplorer" target="_blank" title="WPExplorer" rel="nofollow">WPExplorer Themes</a>',
+		'sanitize_callback' => 'wp_kses_post',
 	) );
 
 	$wp_customize->add_control('wpex_copyright', array(
-		'label'		=> __( 'Custom Copyright', 'wpex' ),
+		'label'		=> esc_html__( 'Custom Copyright', 'wpex-blogger' ),
 		'section'	=> 'wpex_general',
 		'settings'	=> 'wpex_copyright',
 		'type'		=> 'textarea',
-		'priority'	=> '10',
 	) );
 
 	// Theme Settings Section
 	$wp_customize->add_section( 'wpex_social' , array(
-		'title'		=> __( 'Social Options', 'wpex' ),
-		'priority'	=> 201,
+		'title' => esc_html__( 'Social Options', 'wpex-blogger' ),
 	) );
 
 	// Social Options
@@ -154,16 +182,64 @@ function wpex_customizer_general($wp_customize) {
 		$name = ucfirst($name);
 		$wp_customize->add_setting( 'wpex_social_'. $social_option, array(
 			'type'              => 'theme_mod',
-			'sanitize_callback' => false,
+			'sanitize_callback' => 'sanitize_text_field',
 			'default'           => '#',
 		) );
 		$wp_customize->add_control( 'wpex_social_'. $social_option, array(
-			'label'		=> __( $name , 'wpex' ),
+			'label'		=> trim( wp_strip_all_tags( $name ) ),
 			'section'	=> 'wpex_social',
-			'settings'	=> 'wpex_social_'. $social_option,
+			'settings'	=> 'wpex_social_' . trim( wp_strip_all_tags( $social_option ) ),
 			'type'		=> 'text',
-			'priority'	=> $count,
 		) );
-	}		
+	}
+
+	// Image Sizes
+	$wp_customize->add_section( 'wpex_image_sizes' , array(
+		'title' => esc_html__( 'Image Sizes', 'wpex-blogger' ),
+		'description' => esc_html__( 'You can define your image cropping settings for the theme from here. Note: You must use a regeneration plugin to crop old images on your site because WordPress only applies cropping to newly uploaded images.', 'wpex-blogger' ),
+	) );
+
+	$image_sizes = array(
+		'wpex_entry' => esc_html__( 'Entry', 'wpex-blogger' ),
+		'wpex_post'  => esc_html__( 'Post', 'wpex-blogger' ),
+	);
+
+	foreach( $image_sizes as $image_size => $image_size_location ) {
+
+		$wp_customize->add_setting( $image_size . '_thumbnail_width', array(
+			'type'              => 'theme_mod',
+			'sanitize_callback' => 'absint',
+			'default'           => 9999,
+		) );
+
+		$wp_customize->add_control( $image_size . '_thumbnail_width', array(
+			'label'		=> $image_size_location . ' ' . esc_html__( 'Width', 'wpex-blogger' ),
+			'section'	=> 'wpex_image_sizes',
+			'settings'	=> $image_size . '_thumbnail_width',
+			'type'		=> 'text',
+		) );
+
+		$wp_customize->add_setting( $image_size . '_thumbnail_height', array(
+			'type'              => 'theme_mod',
+			'sanitize_callback' => 'absint',
+			'default'           => 9999,
+		) );
+
+		$wp_customize->add_control( $image_size . '_thumbnail_height', array(
+			'label'		=> $image_size_location . ' ' . esc_html__( 'Height', 'wpex-blogger' ),
+			'section'	=> 'wpex_image_sizes',
+			'settings'	=> $image_size . '_thumbnail_height',
+			'type'		=> 'text',
+		) );
+
+	}
+
 }
 add_action( 'customize_register', 'wpex_customizer_general' );
+
+function wpex_sanitize_entry_display( $val = '' ) {
+	if ( 'excerpt' === $val || 'content' === $val || 'the_excerpt' === $val ) {
+		return $val;
+	}
+	return 'excerpt';
+}

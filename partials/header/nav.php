@@ -2,11 +2,8 @@
 /**
  * Header Search
  *
- * @package     Blogger WordPress theme
- * @subpackage  Partials
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       1.0.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
 
 // Exit if accessed directly
@@ -17,7 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Return if disabled or menu isn't defined
 if ( ! get_theme_mod( 'wpex_nav', true ) || ! has_nav_menu( 'main_menu' ) ) {
 	return;
-} ?>
+}
+
+?>
 
 <div id="site-navigation-wrap">
 
@@ -25,7 +24,7 @@ if ( ! get_theme_mod( 'wpex_nav', true ) || ! has_nav_menu( 'main_menu' ) ) {
 
 	<nav id="site-navigation" class="navigation main-navigation clr container" role="navigation">
 
-		<a href="#sidr-main" id="navigation-toggle"><span class="fa fa-bars"></span><?php echo __( 'Menu', 'wpex' ); ?></a>
+		<a href="#sidr-main" id="navigation-toggle"><span class="fa fa-bars"></span><?php echo __( 'Menu', 'wpex-blogger' ); ?></a>
 
 		<?php
 		// Display main menu

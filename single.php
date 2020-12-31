@@ -2,12 +2,14 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package     Blogger WordPress theme
- * @subpackage  Templates
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       1.0.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 get_header(); ?>
 
@@ -18,7 +20,7 @@ get_header(); ?>
 		<main id="content" class="site-content left-content clr" role="main">
 
 			<?php include( locate_template( 'partials/single/layout.php' ) ); ?>
-			
+
 		</main><!-- #content -->
 
 		<?php get_sidebar(); ?>

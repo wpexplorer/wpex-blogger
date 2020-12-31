@@ -2,26 +2,29 @@
 /**
  * The template for displaying a "No posts found" message.
  *
- * @package     Blogger WordPress theme
- * @subpackage  Templates
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       1.0.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 ?>
 
 <div class="page-content content-none boxed clr">
 	<?php if ( is_home() && current_user_can( 'publish_posts' ) ) { ?>
-		<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'wpex' ), admin_url( 'post-new.php' ) ); ?></p>
+		<p><?php esc_html_e( 'No posts found.', 'wpex-blogger' ); ?></p>
 	<?php } elseif ( is_search() ) { ?>
-		<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with different keywords.', 'wpex' ); ?></p>
+		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with different keywords.', 'wpex-blogger' ); ?></p>
 	<?php } elseif ( is_category() ) { ?>
-		<p><?php _e( 'There aren\'t any posts currently published in this category.', 'wpex' ); ?></p>
+		<p><?php esc_html_e( 'There aren\'t any posts currently published in this category.', 'wpex-blogger' ); ?></p>
 	<?php } elseif ( is_tax() ) { ?>
-		<p><?php _e( 'There aren\'t any posts currently published under this taxonomy.', 'wpex' ); ?></p>
+		<p><?php esc_html_e( 'There aren\'t any posts currently published under this taxonomy.', 'wpex-blogger' ); ?></p>
 	<?php } elseif ( is_tag() ) { ?>
-		<p><?php _e( 'There aren\'t any posts currently published under this tag.', 'wpex' ); ?></p>
+		<p><?php esc_html_e( 'There aren\'t any posts currently published under this tag.', 'wpex-blogger' ); ?></p>
 	<?php } else { ?>
-		<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for.', 'wpex' ); ?></p>
+		<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for.', 'wpex-blogger' ); ?></p>
 	<?php } ?>
 </div><!-- .page-content -->

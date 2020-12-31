@@ -2,11 +2,8 @@
 /**
  * Header social links
  *
- * @package     Blogger WordPress theme
- * @subpackage  Partials
- * @author      Alexander Clarke
- * @link        http://www.wpexplorer.com
- * @since       1.0.0
+ * @package WPEX Blogger
+ * @since 1.0.0
  */
 
 // Exit if accessed directly
@@ -20,10 +17,12 @@ if ( ! get_theme_mod( 'wpex_header_social', true ) ) {
 }
 
 // Get social settings
-$social_options = wpex_social_links(); ?>
+$social_options = wpex_social_links();
+
+?>
 
 
-<aside id="header-aside" class="clr">
+<aside id="header-aside">
 
 	<?php
 	// Loop through social settings
@@ -33,13 +32,16 @@ $social_options = wpex_social_links(); ?>
 		// Define social icon and name
 		$icon = ( 'googleplus' == $social_option ) ? $icon = 'google-plus' : $social_option;
 		$name = str_replace('-', ' ', $social_option);
-		$name = ucfirst( $name ); ?>
+		$name = ucfirst( $name );
+
+		$link = get_theme_mod( 'wpex_social_' . $social_option, '#' );
+		?>
 
 		<?php
 		// Display social link if link is added in the customizer
-		if ( get_theme_mod( 'wpex_social_'. $social_option, '#' ) ) : ?>
+		if ( ! empty( $link ) ) : ?>
 
-			<a href="<?php echo get_theme_mod( 'wpex_social_'. $social_option ); ?>" title="<?php echo $name; ?>"><span class="fa fa-<?php echo $icon; ?>"></span></a>
+			<a href="<?php echo esc_url( $link ); ?>"><span class="fa fa-<?php echo sanitize_html_class( $icon ); ?>" aria-hidden="true"></span><span class="screen-reader-text"><?php echo esc_html( $name ); ?></span></a>
 
 		<?php endif; ?>
 
