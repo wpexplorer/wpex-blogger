@@ -1,0 +1,1 @@
+copy wpex-blogger-ru_RU.mo and wpex-blogger-ru_RU.po to ../wp-content/languages/themes
