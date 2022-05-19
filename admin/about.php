@@ -67,8 +67,8 @@ class WPEX_Theme_Admin_About {
 	public function admin_menus() {
 
 		add_theme_page(
-			esc_html( 'Theme Details', 'wpex-blogger' ),
-			esc_html( 'Theme Details', 'wpex-blogger' ),
+			esc_html_x( 'Theme Details', 'theme about page', 'wpex-blogger' ),
+			esc_html_x( 'Theme Details', 'theme about page', 'wpex-blogger' ),
 			'manage_options',
 			'wpex-theme',
 			array( $this, 'recommended_screen' )
