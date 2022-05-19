@@ -198,16 +198,16 @@ if ( ! function_exists( 'wpex_pagination') ) {
 			}
 
 			// Display pagination
-			echo paginate_links(array(
+			echo '<div class="wpex-page-numbers-wrap">' . paginate_links(array(
 				'base'      => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
 				'format'    => $format,
 				'current'   => max( 1, get_query_var( 'paged') ),
 				'total'     => $total,
 				'mid_size'  => 2,
 				'type'      => 'list',
-				'prev_text' => '<i class="fa fa-angle-left"></i>',
-				'next_text' => '<i class="fa fa-angle-right"></i>',
-			) );
+				'prev_text' => '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"/></svg><span class="screen-reader-text">' . esc_html( 'Previous', 'wpex-blogger' ) . '</span>',
+				'next_text' => '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z"/></svg><span class="screen-reader-text">' . esc_html( 'Next', 'wpex-blogger' ) . '</span>',
+			) ) . '</div>';
 		}
 	}
 

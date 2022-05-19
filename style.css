@@ -1,7 +1,7 @@
 /*
 ==================================================
  Theme Name: WPEX Blogger
- Version: 2.2
+ Version: 2.2.1
  Description: Free WordPress Theme by WPExplorer
  Author: WPExplorer
  Author URI: https://www.wpexplorer.com/
@@ -252,16 +252,18 @@ hr { border: solid #eee; border-width: 1px 0 0; clear: both; height: 0; margin: 
 
 /* Pagination
 ================================================== */
-ul.page-numbers { list-style: none; margin: 0; }
-ul.page-numbers li { display: block; text-align: center; float: left; }
-.page-numbers:after { clear: both; content: "."; display: block; height: 0; line-height: 0; visibility: hidden; }
+ul.page-numbers { list-style: none; margin: 0; display: flex; }
+ul.page-numbers li { text-align: center; }
 .page-numbers a,
-.page-numbers span,
-#edd_download_pagination .page-numbers { background-color: transparent; border: 0; color: #555; background: #fff; cursor: pointer; display: block; float: left; line-height: 1; margin-right: 6px; margin-top: 6px; width: auto; padding: 8px 10px; text-align: center; ftext-decoration: none; }
+.page-numbers span:not(.screen-reader-text),
+#edd_download_pagination .page-numbers { background-color: transparent; border: 0; color: #555; background: #fff; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; line-height: 1; margin-right: 6px; margin-top: 6px; width: auto; padding: 0 10px; height: 30px; text-align: center; text-decoration: none; }
 .page-numbers a:hover,
 .page-numbers span.current,
 #edd_download_pagination .page-numbers:hover,
 #edd_download_pagination .page-numbers.current { background: #49ba86; color: #fff; text-decoration: none; }
+.page-numbers svg { height: 20px; width: 20px; }
+.wpex-page-numbers-wrap .page-numbers.next,
+.wpex-page-numbers-wrap .page-numbers.prev { padding-left: 4px; padding-right: 4px; }
 
 /*next/prev*/
 .single-post-pagination { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; margin-top: 40px; padding-top: 30px; border-top: 2px solid #ddd; }
