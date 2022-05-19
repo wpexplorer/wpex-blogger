@@ -10,7 +10,7 @@ function wpex_customizer_general($wp_customize) {
 
 	// Theme Settings Section
 	$wp_customize->add_section( 'wpex_general' , array(
-		'title'		=> esc_html__( 'Theme Settings', 'wpex-blogger' ),
+		'title' => esc_html__( 'Theme Settings', 'wpex-blogger' ),
 	) );
 
 	// Logo Image
@@ -178,17 +178,15 @@ function wpex_customizer_general($wp_customize) {
 	$count=0;
 	foreach ( $social_options as $social_option ) {
 		$count++;
-		$name = $social_option = str_replace('_', ' ', $social_option);
-		$name = ucfirst($name);
-		$wp_customize->add_setting( 'wpex_social_'. $social_option, array(
+		$social_key = 'wpex_social_' . sanitize_key( $social_option );
+		$wp_customize->add_setting( $social_key, array(
 			'type'              => 'theme_mod',
 			'sanitize_callback' => 'sanitize_text_field',
-			'default'           => '#',
 		) );
-		$wp_customize->add_control( 'wpex_social_'. $social_option, array(
-			'label'		=> trim( wp_strip_all_tags( $name ) ),
+		$wp_customize->add_control( $social_key, array(
+			'label'		=> trim( wp_strip_all_tags( ucfirst( $social_option ) ) ),
 			'section'	=> 'wpex_social',
-			'settings'	=> 'wpex_social_' . trim( wp_strip_all_tags( $social_option ) ),
+			'settings'	=> $social_key,
 			'type'		=> 'text',
 		) );
 	}

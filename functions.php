@@ -2,23 +2,9 @@
 /**
  * Theme functions and definitions.
  *
- * Sets up the theme and provides some helper functions
- *
- * When using a child theme (see http://codex.wordpress.org/Theme_Development
- * and http://codex.wordpress.org/Child_Themes), you can override certain
- * functions (those wrapped in a function_exists() call) by defining them first
- * in your child theme's functions.php file. The child theme's functions.php
- * file is included before the parent theme's file, so the child theme
- * functions would be used.
- *
- * For more information on hooks, actions, and filters,
- * see http://codex.wordpress.org/Plugin_API
- *
- * @package    Blogger WordPress theme
- * @subpackage Templates
- * @author     Alexander Clarke
- * @link       https://www.wpexplorer.com/
- * @since      2.0.0
+ * @package Blogger WordPress theme
+ * @author  WPExplorer
+ * @link    https://www.wpexplorer.com/
  */
 
 // Exit if accessed directly
@@ -85,13 +71,7 @@ if ( ! class_exists( 'WPEX_Blogger_Theme' ) ) {
 		 * @since 2.0.0
 		 */
 		public function theme_version() {
-
-			// Get theme data
-			$theme = wp_get_theme();
-
-			// Return theme version
-			return $theme->get( 'Version' );
-
+			return wp_get_theme()->get( 'Version' );
 		}
 
 		/**
@@ -100,11 +80,10 @@ if ( ! class_exists( 'WPEX_Blogger_Theme' ) ) {
 		 * @since 2.0.0
 		 */
 		public function includes() {
-
-			require_once ( WPEX_INCLUDES_DIR .'helpers.php' );
-			require_once ( WPEX_INCLUDES_DIR .'post-meta.php' );
-			require_once ( WPEX_INCLUDES_DIR .'comments-callback.php' );
-			require_once ( WPEX_INCLUDES_DIR .'customizer/general.php' );
+			require_once WPEX_INCLUDES_DIR . 'helpers.php';
+			require_once WPEX_INCLUDES_DIR . 'post-meta.php';
+			require_once WPEX_INCLUDES_DIR . 'comments-callback.php';
+			require_once WPEX_INCLUDES_DIR . 'customizer/general.php';
 
 			if ( is_admin() ) {
 				if ( ! defined( 'WPEX_DISABLE_THEME_DASHBOARD_FEEDS' ) ) {
@@ -179,13 +158,6 @@ if ( ! class_exists( 'WPEX_Blogger_Theme' ) ) {
 				get_stylesheet_uri(),
 				false,
 				WPEX_THEME_VERSION
-			);
-
-			wp_enqueue_style(
-				'wpex-font-awesome',
-				WPEX_CSS_DIR_URI . 'font-awesome.min.css',
-				false,
-				'4.3.0'
 			);
 
 			wp_enqueue_style(
@@ -288,9 +260,8 @@ if ( ! class_exists( 'WPEX_Blogger_Theme' ) ) {
 		 * @since 2.0.0
 		 */
 		public function excerpt_more() {
-			global $post;
 			if ( get_theme_mod( 'wpex_blog_readmore', true ) ) {
-				return '&hellip;<span class="wpex-readmore"><a href="'. get_permalink( $post->ID ) .'">'. esc_html__( 'continue reading', 'wpex-blogger' ) .' &rarr;</a></span>';
+				return '&hellip;<span class="wpex-readmore"><a href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'continue reading', 'wpex-blogger' ) . ' &rarr;</a></span>';
 			} else {
 				return '&hellip;';
 			}

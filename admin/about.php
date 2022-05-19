@@ -38,22 +38,20 @@ class WPEX_Theme_Admin_About {
 	 * @return void
 	 */
 	public function admin_init() {
-
-		if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {
+		if ( is_network_admin() || array_key_exists( 'activate-multi', $_GET ) ) {
 			return;
 		}
 
 		global $pagenow;
-		
-		if ( is_admin()
-			&& isset( $_GET['activated'] )
-			&& $pagenow == 'themes.php'
+		if ( $pagenow
+			&& $pagenow === 'themes.php'
+			&& is_admin()
+			&& array_key_exists( 'activated', $_GET )
 			&& current_user_can( 'manage_options' )
 		) {
 			wp_safe_redirect( admin_url( 'admin.php?page=wpex-theme' ) );
 			exit;
 		}
-
 	}
 
 	/**
@@ -65,7 +63,6 @@ class WPEX_Theme_Admin_About {
 	 * @return void
 	 */
 	public function admin_menus() {
-
 		add_theme_page(
 			esc_html_x( 'Theme Details', 'theme about page', 'wpex-blogger' ),
 			esc_html_x( 'Theme Details', 'theme about page', 'wpex-blogger' ),
@@ -73,7 +70,6 @@ class WPEX_Theme_Admin_About {
 			'wpex-theme',
 			array( $this, 'recommended_screen' )
 		);
-
 	}
 
 	/**
@@ -101,7 +97,9 @@ class WPEX_Theme_Admin_About {
 			<?php
 			// Get theme version #
 			$theme_data    = wp_get_theme();
-			$theme_version = $theme_data->get( 'Version' ); ?>
+			$theme_version = $theme_data->get( 'Version' );
+
+			?>
 
 			<h1><?php echo esc_html( $this->info[ 'name' ] ); ?> v<?php echo esc_html( $theme_version ); ?></h1>
 

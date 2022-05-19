@@ -3,415 +3,366 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blogger WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 23:29+0000\n"
+"POT-Creation-Date: 2022-05-18 22:53-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: AJ Clarke <wpexplorer@gmail.com>\n"
 "Language-Team: WPExplorer.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n;_nx;esc_html__;"
-"esc_attr__;esc_html_e;esc_attr_e;nx_\n"
+"esc_attr__;esc_html_e;esc_attr_e;nx_;esc_html_x\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Loco https://localise.biz/\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-SearchPath-0: ..\n"
-"\n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
 
-#: partials/single/meta.php:31 partials/entry/meta.php:33
-msgid "% Comments"
+#: ../404.php:18
+msgid "Unfortunately, the page you tried accessing could not be retrieved."
 msgstr ""
 
-#: comments.php:48
-msgid "&larr; Older Comments"
-msgstr ""
-
-#: partials/single/meta.php:31 partials/entry/meta.php:33
-msgid "0 Comments"
-msgstr ""
-
-#: partials/single/meta.php:31 partials/entry/meta.php:33
-msgid "1 Comment"
-msgstr ""
-
-#: inc/comments-callback.php:45
-#, php-format
-msgctxt "1: date"
-msgid "%1$s"
-msgstr ""
-
-#: partials/archive-header.php:38
-msgid "Blog"
-msgstr ""
-
-#: inc/customizer/general.php:38
-msgid ""
-"Can be used to constrain a large image or SVG to a specific size. Use format "
-"WidthxHeight (Ex: 400x200)"
-msgstr ""
-
-#: comments.php:47
-msgid "Comment navigation"
-msgstr ""
-
-#: comments.php:35
-#, php-format
-msgctxt "comments title"
-msgid "This article has 1 comment"
-msgid_plural "This article has %1$s comments"
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:293 inc/helpers.php:109
-msgid "continue reading"
-msgstr ""
-
-#: inc/customizer/general.php:165
-msgid "Custom Copyright"
-msgstr ""
-
-#: inc/customizer/general.php:138
-msgid "Custom Excerpt"
-msgstr ""
-
-#: inc/customizer/general.php:119
-msgid "Display Post tags?"
-msgstr ""
-
-#: partials/edit-post.php:17
-msgid "Edit Post"
-msgstr ""
-
-#: inc/customizer/general.php:133
-msgid "Entries Display?"
-msgstr ""
-
-#: inc/customizer/general.php:203
-msgid "Entry"
-msgstr ""
-
-#: inc/customizer/general.php:152
-msgid "Excerpt Length"
-msgstr ""
-
-#: inc/customizer/general.php:105
-msgid "Featured Image on Posts"
-msgstr ""
-
-#: functions.php:250
-msgid "Footer 1"
-msgstr ""
-
-#: functions.php:261
-msgid "Footer 2"
-msgstr ""
-
-#: functions.php:272
-msgid "Footer 3"
-msgstr ""
-
-#: inc/customizer/general.php:63
-msgid "Footer Widgets"
-msgstr ""
-
-#. Description of the theme
-msgid "Free WordPress Theme by WPExplorer"
-msgstr ""
-
-#: inc/customizer/general.php:139
-msgid "Full Post Content"
-msgstr ""
-
-#. Name of the template
-msgid "Fullwidth"
-msgstr ""
-
-#: inc/customizer/general.php:229
-msgid "Height"
-msgstr ""
-
-#. Author URI of the theme
-msgid "https://www.wpexplorer.com/"
-msgstr ""
-
-#. URI of the theme
-msgid "https://www.wpexplorer.com/blogger-free-wordpress-theme/"
-msgstr ""
-
-#: inc/customizer/general.php:23
-msgid "Image Logo"
-msgstr ""
-
-#: inc/customizer/general.php:35
-msgid "Image Logo Dimensions"
-msgstr ""
-
-#: inc/customizer/general.php:198
-msgid "Image Sizes"
-msgstr ""
-
-#: partials/none.php:28
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
-msgstr ""
-
-#: comments.php:54
-msgid "Leave a Comment"
-msgstr ""
-
-#: functions.php:135
-msgid "Main"
-msgstr ""
-
-#: partials/header/nav.php:27
-msgid "Menu"
-msgstr ""
-
-#: comments.php:49
-msgid "Newer Comments &rarr;"
-msgstr ""
-
-#: inc/helpers.php:200
-msgid "Newer Posts"
-msgstr ""
-
-#: partials/none.php:18
-msgid "No posts found."
-msgstr ""
-
-#: inc/post-meta.php:34
-msgid "oEmbed Compatible Video URL:"
-msgstr ""
-
-#: inc/helpers.php:202
-msgid "Older Posts"
-msgstr ""
-
-#: inc/customizer/general.php:204
-msgid "Post"
-msgstr ""
-
-#: inc/post-meta.php:19
-msgid "Post Video"
-msgstr ""
-
-#: partials/single/meta.php:17 partials/entry/meta.php:19
-msgid "Posted on"
-msgstr ""
-
-#: inc/customizer/general.php:91
-msgid "Read More Link"
-msgstr ""
-
-#: inc/comments-callback.php:54
-msgid "Reply"
-msgstr ""
-
-#: partials/archive-header.php:29
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: functions.php:236
-msgid "Sidebar"
-msgstr ""
-
-#: inc/customizer/general.php:77
-msgid "Social Links"
-msgstr ""
-
-#: inc/customizer/general.php:173
-msgid "Social Options"
-msgstr ""
-
-#: partials/none.php:20
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with "
-"different keywords."
-msgstr ""
-
-#: partials/single/post-tags.php:18
-msgid "Tagged:"
-msgstr ""
-
-#: admin/about.php:129
-msgctxt "theme about page"
-msgid ""
-"A back-link to our website is very much appreciated or you can follow us via "
-"our social media!"
-msgstr ""
-
-#: admin/about.php:108
-msgctxt "theme about page"
-msgid "A free WordPress theme by WPExplorer"
-msgstr ""
-
-#: admin/about.php:144
-msgctxt "theme about page"
-msgid ""
-"Below you will find some useful links to get you started with this theme."
-msgstr ""
-
-#: admin/about.php:178
-msgctxt "theme about page"
-msgid ""
-"Check out our most advanced (yet easy to use) and flexible theme to date."
-msgstr ""
-
-#: admin/about.php:123
-msgctxt "theme about page"
-msgid "Credits"
-msgstr ""
-
-#: admin/about.php:154
-msgctxt "theme about page"
-msgid "Customize Your Site"
-msgstr ""
-
-#: admin/about.php:118
-msgctxt "theme about page"
-msgid "Disclaimer"
-msgstr ""
-
-#: admin/about.php:140
-msgctxt "theme about page"
-msgid "Getting Started"
-msgstr ""
-
-#: admin/about.php:113
-msgctxt "theme about page"
-msgid "GPL License"
-msgstr ""
-
-#: admin/about.php:108
-msgctxt "theme about page"
-msgid "Report a Bug"
-msgstr ""
-
-#: admin/about.php:71 admin/about.php:108
-msgctxt "theme about page"
+#: ../admin/about.php:67 ../admin/about.php:68 ../admin/about.php:106
 msgid "Theme Details"
 msgstr ""
 
-#: admin/about.php:114
-msgctxt "theme about page"
+#: ../admin/about.php:106
+msgid "A free WordPress theme by WPExplorer"
+msgstr ""
+
+#: ../admin/about.php:106
+msgid "Report a Bug"
+msgstr ""
+
+#: ../admin/about.php:111
+msgid "GPL License"
+msgstr ""
+
+#: ../admin/about.php:112
 msgid ""
 "This theme is licensed under the GPL license. This means you can use it for "
 "anything you like as long as it remains GPL."
 msgstr ""
 
-#: admin/about.php:119
-msgctxt "theme about page"
+#: ../admin/about.php:116
+msgid "Disclaimer"
+msgstr ""
+
+#: ../admin/about.php:117
 msgid ""
 "This theme is provided “as is”. WPExplorer and Symple Workz LLC disclaim all "
 "warranties of any kind to the fullest extent of the law. You agree that your "
 "use of the theme is at your own risk."
 msgstr ""
 
-#: admin/about.php:125
-msgctxt "theme about page"
+#: ../admin/about.php:121
+msgid "Credits"
+msgstr ""
+
+#: ../admin/about.php:123
 msgid "This theme was created by:"
 msgstr ""
 
-#: admin/about.php:175
-msgctxt "theme about page"
-msgid "Total Drag & Drop Theme"
-msgstr ""
-
-#: admin/about.php:159
-msgctxt "theme about page"
-msgid "Useful Links"
-msgstr ""
-
-#: admin/about.php:127
-msgctxt "theme about page"
+#: ../admin/about.php:125
 msgid "We work hard to develop, support and update this theme."
 msgstr ""
 
-#: inc/customizer/general.php:13
-msgid "Theme Settings"
+#: ../admin/about.php:127
+msgid ""
+"A back-link to our website is very much appreciated or you can follow us via "
+"our social media!"
 msgstr ""
 
-#: partials/none.php:22
-msgid "There aren't any posts currently published in this category."
+#: ../admin/about.php:138
+msgid "Getting Started"
 msgstr ""
 
-#: partials/none.php:26
-msgid "There aren't any posts currently published under this tag."
+#: ../admin/about.php:142
+msgid ""
+"Below you will find some useful links to get you started with this theme."
 msgstr ""
 
-#: partials/none.php:24
-msgid "There aren't any posts currently published under this taxonomy."
+#: ../admin/about.php:152
+msgid "Customize Your Site"
 msgstr ""
 
-#: searchform.php:18 partials/mobile-search.php:18
-msgid "To search type and hit enter"
+#: ../admin/about.php:157
+msgid "Useful Links"
 msgstr ""
 
-#: inc/customizer/general.php:49
-msgid "Top Navigation"
+#: ../admin/about.php:173
+msgid "Total Drag & Drop Theme"
 msgstr ""
 
-#: partials/single/meta.php:23 partials/entry/meta.php:25
-msgid "Under"
+#: ../admin/about.php:176
+msgid ""
+"Check out our most advanced (yet easy to use) and flexible theme to date."
 msgstr ""
 
-#: 404.php:18
-msgid "Unfortunately, the page you tried accessing could not be retrieved."
-msgstr ""
-
-#: functions.php:252
-msgid "Widgets in this area are used in the first footer region."
-msgstr ""
-
-#: functions.php:263
-msgid "Widgets in this area are used in the second footer region."
-msgstr ""
-
-#: functions.php:238
-msgid "Widgets in this area are used in the sidebar region."
-msgstr ""
-
-#: functions.php:274
-msgid "Widgets in this area are used in the third footer region."
-msgstr ""
-
-#: inc/customizer/general.php:216
-msgid "Width"
-msgstr ""
-
-#: partials/single/meta.php:30 partials/entry/meta.php:32
-msgid "With"
-msgstr ""
-
-#: admin/dashboard-feed.php:9
+#: ../admin/dashboard-feed.php:9
 msgid "WordPress Articles"
 msgstr ""
 
-#: inc/customizer/general.php:140
+#: ../comments.php:35
+msgid "This article has 1 comment"
+msgstr ""
+
+#: ../comments.php:47
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:48
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:49
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:54
+msgid "Leave a Comment"
+msgstr ""
+
+#: ../functions.php:135
+msgid "Main"
+msgstr ""
+
+#: ../functions.php:236
+msgid "Sidebar"
+msgstr ""
+
+#: ../functions.php:238
+msgid "Widgets in this area are used in the sidebar region."
+msgstr ""
+
+#: ../functions.php:250
+msgid "Footer 1"
+msgstr ""
+
+#: ../functions.php:252
+msgid "Widgets in this area are used in the first footer region."
+msgstr ""
+
+#: ../functions.php:261
+msgid "Footer 2"
+msgstr ""
+
+#: ../functions.php:263
+msgid "Widgets in this area are used in the second footer region."
+msgstr ""
+
+#: ../functions.php:272
+msgid "Footer 3"
+msgstr ""
+
+#: ../functions.php:274
+msgid "Widgets in this area are used in the third footer region."
+msgstr ""
+
+#: ../functions.php:293 ../inc/helpers.php:153
+msgid "continue reading"
+msgstr ""
+
+#: ../header.php:27
+msgid "Skip to content"
+msgstr ""
+
+#: ../inc/comments-callback.php:54
+msgid "Reply"
+msgstr ""
+
+#: ../inc/comments-callback.php:65
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../inc/customizer/general.php:13
+msgid "Theme Settings"
+msgstr ""
+
+#: ../inc/customizer/general.php:23
+msgid "Image Logo"
+msgstr ""
+
+#: ../inc/customizer/general.php:35
+msgid "Image Logo Dimensions"
+msgstr ""
+
+#: ../inc/customizer/general.php:38
+msgid ""
+"Can be used to constrain a large image or SVG to a specific size. Use format "
+"WidthxHeight (Ex: 400x200)"
+msgstr ""
+
+#: ../inc/customizer/general.php:49
+msgid "Top Navigation"
+msgstr ""
+
+#: ../inc/customizer/general.php:63
+msgid "Footer Widgets"
+msgstr ""
+
+#: ../inc/customizer/general.php:77
+msgid "Social Links"
+msgstr ""
+
+#: ../inc/customizer/general.php:91
+msgid "Read More Link"
+msgstr ""
+
+#: ../inc/customizer/general.php:105
+msgid "Featured Image on Posts"
+msgstr ""
+
+#: ../inc/customizer/general.php:119
+msgid "Display Post tags?"
+msgstr ""
+
+#: ../inc/customizer/general.php:133
+msgid "Entries Display?"
+msgstr ""
+
+#: ../inc/customizer/general.php:138
+msgid "Custom Excerpt"
+msgstr ""
+
+#: ../inc/customizer/general.php:139
+msgid "Full Post Content"
+msgstr ""
+
+#: ../inc/customizer/general.php:140
 msgid "WordPress Excerpt"
 msgstr ""
 
-#. Name of the theme
-msgid "WPEX Blogger"
+#: ../inc/customizer/general.php:152
+msgid "Excerpt Length"
 msgstr ""
 
-#. Author of the theme
-msgid "WPExplorer"
+#: ../inc/customizer/general.php:165
+msgid "Custom Copyright"
 msgstr ""
 
-#: partials/single/author-bio.php:25
-#, php-format
-msgid "Written by %s"
+#: ../inc/customizer/general.php:173
+msgid "Social Options"
 msgstr ""
 
-#: inc/customizer/general.php:199
+#: ../inc/customizer/general.php:196
+msgid "Image Sizes"
+msgstr ""
+
+#: ../inc/customizer/general.php:197
 msgid ""
 "You can define your image cropping settings for the theme from here. Note: "
 "You must use a regeneration plugin to crop old images on your site because "
 "WordPress only applies cropping to newly uploaded images."
 msgstr ""
 
-#: inc/comments-callback.php:65
-msgid "Your comment is awaiting moderation."
+#: ../inc/customizer/general.php:201
+msgid "Entry"
+msgstr ""
+
+#: ../inc/customizer/general.php:202
+msgid "Post"
+msgstr ""
+
+#: ../inc/customizer/general.php:214
+msgid "Width"
+msgstr ""
+
+#: ../inc/customizer/general.php:227
+msgid "Height"
+msgstr ""
+
+#: ../inc/helpers.php:243
+msgid "Newer Posts"
+msgstr ""
+
+#: ../inc/helpers.php:245
+msgid "Older Posts"
+msgstr ""
+
+#: ../inc/post-meta.php:19
+msgid "Post Video"
+msgstr ""
+
+#: ../inc/post-meta.php:34
+msgid "oEmbed Compatible Video URL:"
+msgstr ""
+
+#: ../partials/archive-header.php:29
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../partials/archive-header.php:38
+msgid "Blog"
+msgstr ""
+
+#: ../partials/edit-post.php:17
+msgid "Edit Post"
+msgstr ""
+
+#: ../partials/entry/meta.php:19 ../partials/single/meta.php:17
+msgid "Posted on"
+msgstr ""
+
+#: ../partials/entry/meta.php:25 ../partials/single/meta.php:23
+msgid "Under"
+msgstr ""
+
+#: ../partials/entry/meta.php:32 ../partials/single/meta.php:30
+msgid "With"
+msgstr ""
+
+#: ../partials/entry/meta.php:33 ../partials/single/meta.php:31
+msgid "0 Comments"
+msgstr ""
+
+#: ../partials/entry/meta.php:33 ../partials/single/meta.php:31
+msgid "1 Comment"
+msgstr ""
+
+#: ../partials/entry/meta.php:33 ../partials/single/meta.php:31
+msgid "% Comments"
+msgstr ""
+
+#: ../partials/header/nav.php:27
+msgid "Menu"
+msgstr ""
+
+#: ../partials/mobile-search.php:18 ../searchform.php:18
+msgid "To search type and hit enter"
+msgstr ""
+
+#: ../partials/none.php:18
+msgid "No posts found."
+msgstr ""
+
+#: ../partials/none.php:20
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with "
+"different keywords."
+msgstr ""
+
+#: ../partials/none.php:22
+msgid "There aren't any posts currently published in this category."
+msgstr ""
+
+#: ../partials/none.php:24
+msgid "There aren't any posts currently published under this taxonomy."
+msgstr ""
+
+#: ../partials/none.php:26
+msgid "There aren't any posts currently published under this tag."
+msgstr ""
+
+#: ../partials/none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+msgstr ""
+
+#: ../partials/single/author-bio.php:25
+#, php-format
+msgid "Written by %s"
+msgstr ""
+
+#: ../partials/single/post-tags.php:18
+msgid "Tagged:"
 msgstr ""

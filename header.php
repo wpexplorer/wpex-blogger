@@ -6,7 +6,6 @@
  * @since 1.0
  */
 
-// Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
@@ -24,6 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <body <?php body_class(); ?>>
 
 <?php wp_body_open(); ?>
+
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wpex-blogger' ); ?></a>
 
 <?php get_template_part( 'partials/header/nav' ); ?>
 
