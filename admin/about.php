@@ -12,12 +12,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.4
  */
 class WPEX_Theme_Admin_About {
-
+	
 	/**
 	 * Get things started
 	 *
 	 * @since 1.0
 	 */
+	public $info;
+	
 	public function __construct() {
 
 		// Vars
