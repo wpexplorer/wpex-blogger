@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blogger WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 22:53-0700\n"
+"POT-Creation-Date: 2023-11-15 17:47-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: AJ Clarke <wpexplorer@gmail.com>\n"
 "Language-Team: WPExplorer.com\n"
@@ -14,92 +14,11 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n;_nx;esc_html__;"
 "esc_attr__;esc_html_e;esc_attr_e;nx_;esc_html_x\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:18
 msgid "Unfortunately, the page you tried accessing could not be retrieved."
-msgstr ""
-
-#: ../admin/about.php:67 ../admin/about.php:68 ../admin/about.php:106
-msgid "Theme Details"
-msgstr ""
-
-#: ../admin/about.php:106
-msgid "A free WordPress theme by WPExplorer"
-msgstr ""
-
-#: ../admin/about.php:106
-msgid "Report a Bug"
-msgstr ""
-
-#: ../admin/about.php:111
-msgid "GPL License"
-msgstr ""
-
-#: ../admin/about.php:112
-msgid ""
-"This theme is licensed under the GPL license. This means you can use it for "
-"anything you like as long as it remains GPL."
-msgstr ""
-
-#: ../admin/about.php:116
-msgid "Disclaimer"
-msgstr ""
-
-#: ../admin/about.php:117
-msgid ""
-"This theme is provided “as is”. WPExplorer and Symple Workz LLC disclaim all "
-"warranties of any kind to the fullest extent of the law. You agree that your "
-"use of the theme is at your own risk."
-msgstr ""
-
-#: ../admin/about.php:121
-msgid "Credits"
-msgstr ""
-
-#: ../admin/about.php:123
-msgid "This theme was created by:"
-msgstr ""
-
-#: ../admin/about.php:125
-msgid "We work hard to develop, support and update this theme."
-msgstr ""
-
-#: ../admin/about.php:127
-msgid ""
-"A back-link to our website is very much appreciated or you can follow us via "
-"our social media!"
-msgstr ""
-
-#: ../admin/about.php:138
-msgid "Getting Started"
-msgstr ""
-
-#: ../admin/about.php:142
-msgid ""
-"Below you will find some useful links to get you started with this theme."
-msgstr ""
-
-#: ../admin/about.php:152
-msgid "Customize Your Site"
-msgstr ""
-
-#: ../admin/about.php:157
-msgid "Useful Links"
-msgstr ""
-
-#: ../admin/about.php:173
-msgid "Total Drag & Drop Theme"
-msgstr ""
-
-#: ../admin/about.php:176
-msgid ""
-"Check out our most advanced (yet easy to use) and flexible theme to date."
-msgstr ""
-
-#: ../admin/dashboard-feed.php:9
-msgid "WordPress Articles"
 msgstr ""
 
 #: ../comments.php:35
@@ -122,43 +41,43 @@ msgstr ""
 msgid "Leave a Comment"
 msgstr ""
 
-#: ../functions.php:135
+#: ../functions.php:95
 msgid "Main"
 msgstr ""
 
-#: ../functions.php:236
+#: ../functions.php:189
 msgid "Sidebar"
 msgstr ""
 
-#: ../functions.php:238
+#: ../functions.php:191
 msgid "Widgets in this area are used in the sidebar region."
 msgstr ""
 
-#: ../functions.php:250
+#: ../functions.php:203
 msgid "Footer 1"
 msgstr ""
 
-#: ../functions.php:252
+#: ../functions.php:205
 msgid "Widgets in this area are used in the first footer region."
 msgstr ""
 
-#: ../functions.php:261
+#: ../functions.php:214
 msgid "Footer 2"
 msgstr ""
 
-#: ../functions.php:263
+#: ../functions.php:216
 msgid "Widgets in this area are used in the second footer region."
 msgstr ""
 
-#: ../functions.php:272
+#: ../functions.php:225
 msgid "Footer 3"
 msgstr ""
 
-#: ../functions.php:274
+#: ../functions.php:227
 msgid "Widgets in this area are used in the third footer region."
 msgstr ""
 
-#: ../functions.php:293 ../inc/helpers.php:153
+#: ../functions.php:245 ../inc/helpers.php:153
 msgid "continue reading"
 msgstr ""
 

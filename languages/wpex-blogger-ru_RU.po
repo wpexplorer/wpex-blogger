@@ -2,50 +2,121 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blogger WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 21:37+0000\n"
-"PO-Revision-Date: 2022-05-18 23:47+0000\n"
+"POT-Creation-Date: 2023-11-15 17:47-0800\n"
+"PO-Revision-Date: 2023-11-15 17:47-0800\n"
 "Last-Translator: Dimitrij Gorodeckij: kvarkas@gmail.com\n"
 "Language-Team: Русский\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n;_nx;esc_html__;"
 "esc_attr__;esc_html_e;esc_attr_e;nx_\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Loco https://localise.biz/\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Loco-Version: 2.6.1; wp-5.9.3\n"
 "X-Poedit-SearchPath-0: ..\n"
-"Language: ru_RU\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
-"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
-"X-Loco-Version: 2.6.1; wp-5.9.3"
 
-#: partials/single/meta.php:31 partials/entry/meta.php:33
-msgid "% Comments"
-msgstr "% Коментарии"
+#: ../404.php:18
+msgid "Unfortunately, the page you tried accessing could not be retrieved."
+msgstr ""
+"К сожалению, ваш доступ к странице к которой вы пытались обратиться, не "
+"подтвержден."
 
-#: comments.php:48
+#: ../comments.php:35
+#, fuzzy
+#| msgctxt "comments title"
+#| msgid "This article has 1 comment"
+#| msgid_plural "This article has %1$s comments"
+msgid "This article has 1 comment"
+msgstr "У этой статьи 1 комментарий."
+
+#: ../comments.php:47
+msgid "Comment navigation"
+msgstr "Навигация по комментариям"
+
+#: ../comments.php:48
 msgid "&larr; Older Comments"
 msgstr "&larr; Предыдущие комментарии"
 
-#: partials/single/meta.php:31 partials/entry/meta.php:33
-msgid "0 Comments"
-msgstr "Нету коментариев"
+#: ../comments.php:49
+msgid "Newer Comments &rarr;"
+msgstr "Новейшие комментарии &rarr;"
 
-#: partials/single/meta.php:31 partials/entry/meta.php:33
-msgid "1 Comment"
-msgstr "1 Коментарий"
+#: ../comments.php:54
+msgid "Leave a Comment"
+msgstr "Оставить комментарий"
 
-#: inc/comments-callback.php:45
-#, php-format
-msgctxt "1: date"
-msgid "%1$s"
-msgstr "%1$s"
+#: ../functions.php:95
+msgid "Main"
+msgstr "Oсновной"
 
-#: partials/archive-header.php:38
-msgid "Blog"
-msgstr "Блог"
+#: ../functions.php:189
+msgid "Sidebar"
+msgstr "Боковая панель"
 
-#: inc/customizer/general.php:38
+#: ../functions.php:191
+msgid "Widgets in this area are used in the sidebar region."
+msgstr "Виджеты этой области используются в боковой панели."
+
+#: ../functions.php:203
+msgid "Footer 1"
+msgstr "Нижний колонтитул 1"
+
+#: ../functions.php:205
+msgid "Widgets in this area are used in the first footer region."
+msgstr ""
+"Виджеты в этой области используются в первой области нижнего колонтитула."
+
+#: ../functions.php:214
+msgid "Footer 2"
+msgstr "Нижний колонтитул 2"
+
+#: ../functions.php:216
+msgid "Widgets in this area are used in the second footer region."
+msgstr ""
+"Виджеты в этой области используются во второй области нижнего колонтитула."
+
+#: ../functions.php:225
+msgid "Footer 3"
+msgstr "Нижний колонтитул 3"
+
+#: ../functions.php:227
+msgid "Widgets in this area are used in the third footer region."
+msgstr ""
+"Виджеты в этой области используются в третьей области нижнего колонтитула."
+
+#: ../functions.php:245 ../inc/helpers.php:153
+msgid "continue reading"
+msgstr "продолжить чтение"
+
+#: ../header.php:27
+msgid "Skip to content"
+msgstr ""
+
+#: ../inc/comments-callback.php:54
+msgid "Reply"
+msgstr "Ответить"
+
+#: ../inc/comments-callback.php:65
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш комментарий ожидает модерации."
+
+#: ../inc/customizer/general.php:13
+msgid "Theme Settings"
+msgstr "Настройки темы"
+
+#: ../inc/customizer/general.php:23
+msgid "Image Logo"
+msgstr "Изображение логотипа"
+
+#: ../inc/customizer/general.php:35
+msgid "Image Logo Dimensions"
+msgstr "Размер логотипа изображения"
+
+#: ../inc/customizer/general.php:38
 msgid ""
 "Can be used to constrain a large image or SVG to a specific size. Use format "
 "WidthxHeight (Ex: 400x200)"
@@ -53,381 +124,63 @@ msgstr ""
 "Может использоваться для ограничения большого изображения или SVG "
 "определенным размером. Используйте формат Ширина x Высота (например: 400x200)"
 
-#: comments.php:47
-msgid "Comment navigation"
-msgstr "Навигация по комментариям"
-
-#: comments.php:35
-#, php-format
-msgctxt "comments title"
-msgid "This article has 1 comment"
-msgid_plural "This article has %1$s comments"
-msgstr[0] "У этой статьи 1 комментарий."
-msgstr[1] "У этой статьи %1$s комментария."
-msgstr[2] "У этой статьи %1$s комментариев."
-
-#: functions.php:293 inc/helpers.php:109
-msgid "continue reading"
-msgstr "продолжить чтение"
-
-#: inc/customizer/general.php:165
-msgid "Custom Copyright"
-msgstr "Пользовательское авторское право"
-
-#: inc/customizer/general.php:138
-msgid "Custom Excerpt"
-msgstr "Пользовательская выдержка"
-
-#: inc/customizer/general.php:119
-msgid "Display Post tags?"
-msgstr "Отображать теги сообщений?"
-
-#: partials/edit-post.php:17
-msgid "Edit Post"
-msgstr "Редактировать пост"
-
-#: inc/customizer/general.php:133
-msgid "Entries Display?"
-msgstr "Отображение записей?"
-
-#: inc/customizer/general.php:203
-msgid "Entry"
-msgstr "Запись"
-
-#: inc/customizer/general.php:152
-msgid "Excerpt Length"
-msgstr "Длина отрывка"
-
-#: inc/customizer/general.php:105
-msgid "Featured Image on Posts"
-msgstr "Рекомендуемое изображение в сообщениях"
-
-#: functions.php:250
-msgid "Footer 1"
-msgstr "Нижний колонтитул 1"
-
-#: functions.php:261
-msgid "Footer 2"
-msgstr "Нижний колонтитул 2"
-
-#: functions.php:272
-msgid "Footer 3"
-msgstr "Нижний колонтитул 3"
-
-#: inc/customizer/general.php:63
-msgid "Footer Widgets"
-msgstr "Виджеты нижнего колонтитула"
-
-#. Description of the theme
-msgid "Free WordPress Theme by WPExplorer"
-msgstr "Бесплатная тема для WordPress от WPExplorer"
-
-#: inc/customizer/general.php:139
-msgid "Full Post Content"
-msgstr "Полное содержание поста"
-
-#. Name of the template
-msgid "Fullwidth"
-msgstr "На всю ширину"
-
-#: inc/customizer/general.php:229
-msgid "Height"
-msgstr "Высота"
-
-#. Author URI of the theme
-msgid "https://www.wpexplorer.com/"
-msgstr "https://www.wpexplorer.com/"
-
-#. URI of the theme
-msgid "https://www.wpexplorer.com/blogger-free-wordpress-theme/"
-msgstr "https://www.wpexplorer.com/blogger-free-wordpress-theme/"
-
-#: inc/customizer/general.php:23
-msgid "Image Logo"
-msgstr "Изображение логотипа"
-
-#: inc/customizer/general.php:35
-msgid "Image Logo Dimensions"
-msgstr "Размер логотипа изображения"
-
-#: inc/customizer/general.php:198
-msgid "Image Sizes"
-msgstr "Размеры изображения"
-
-#: partials/none.php:28
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
-msgstr "Похоже, мы не можем найти то, что вы ищете."
-
-#: comments.php:54
-msgid "Leave a Comment"
-msgstr "Оставить комментарий"
-
-#: functions.php:135
-msgid "Main"
-msgstr "Oсновной"
-
-#: partials/header/nav.php:27
-msgid "Menu"
-msgstr "Меню"
-
-#: comments.php:49
-msgid "Newer Comments &rarr;"
-msgstr "Новейшие комментарии &rarr;"
-
-#: inc/helpers.php:200
-msgid "Newer Posts"
-msgstr "Новые записи"
-
-#: partials/none.php:18
-msgid "No posts found."
-msgstr "Записей не найдено."
-
-#: inc/post-meta.php:34
-msgid "oEmbed Compatible Video URL:"
-msgstr "oВстроить URL-адрес совместимого видео:"
-
-#: inc/helpers.php:202
-msgid "Older Posts"
-msgstr "Старые записи"
-
-#: inc/customizer/general.php:204
-msgid "Post"
-msgstr "Запись"
-
-#: inc/post-meta.php:19
-msgid "Post Video"
-msgstr "Опубликовать видео"
-
-#: partials/single/meta.php:17 partials/entry/meta.php:19
-msgid "Posted on"
-msgstr "Опубликовано:"
-
-#: inc/customizer/general.php:91
-msgid "Read More Link"
-msgstr "Читать дальше Ссылка"
-
-#: inc/comments-callback.php:54
-msgid "Reply"
-msgstr "Ответить"
-
-#: partials/archive-header.php:29
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Результаты поиска для: %s"
-
-#: functions.php:236
-msgid "Sidebar"
-msgstr "Боковая панель"
-
-#: inc/customizer/general.php:77
-msgid "Social Links"
-msgstr "Социальные ссылки"
-
-#: inc/customizer/general.php:173
-msgid "Social Options"
-msgstr "Социальные возможности"
-
-#: partials/none.php:20
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with "
-"different keywords."
-msgstr ""
-"Извините, но по вашему запросу ничего не найдено. Пожалуйста, попробуйте еще "
-"раз, используя другие ключевые слова."
-
-#: partials/single/post-tags.php:18
-msgid "Tagged:"
-msgstr "Метки:"
-
-#: admin/about.php:129
-msgctxt "theme about page"
-msgid ""
-"A back-link to our website is very much appreciated or you can follow us via "
-"our social media!"
-msgstr ""
-"Очень приветствуется обратная ссылка на наш веб-сайт, или вы можете следить "
-"за нашими новостями подписавшись на нас в социальных сетях!"
-
-#: admin/about.php:108
-msgctxt "theme about page"
-msgid "A free WordPress theme by WPExplorer"
-msgstr "Бесплатная тема для WordPress от WPExplorer"
-
-#: admin/about.php:144
-msgctxt "theme about page"
-msgid ""
-"Below you will find some useful links to get you started with this theme."
-msgstr ""
-"Ниже вы найдете несколько полезных ссылок, которые помогут вам начать работу "
-"с этой темой."
-
-#: admin/about.php:178
-msgctxt "theme about page"
-msgid ""
-"Check out our most advanced (yet easy to use) and flexible theme to date."
-msgstr ""
-"Оцените нашу самую продвинутую (но простую в использовании) и гибкую тему на "
-"сегодняшний день."
-
-#: admin/about.php:123
-msgctxt "theme about page"
-msgid "Credits"
-msgstr "Признательность"
-
-#: admin/about.php:154
-msgctxt "theme about page"
-msgid "Customize Your Site"
-msgstr "Настройте свой сайт"
-
-#: admin/about.php:118
-msgctxt "theme about page"
-msgid "Disclaimer"
-msgstr "Заявление об ограничении ответственности"
-
-#: admin/about.php:140
-msgctxt "theme about page"
-msgid "Getting Started"
-msgstr "Приступаем к работе"
-
-#: admin/about.php:113
-msgctxt "theme about page"
-msgid "GPL License"
-msgstr "GPL-лицензия"
-
-#: admin/about.php:108
-msgctxt "theme about page"
-msgid "Report a Bug"
-msgstr "Сообщить об ошибке"
-
-#: admin/about.php:71 admin/about.php:108
-msgctxt "theme about page"
-msgid "Theme Details"
-msgstr "Подробно о Теме"
-
-#: admin/about.php:114
-msgctxt "theme about page"
-msgid ""
-"This theme is licensed under the GPL license. This means you can use it for "
-"anything you like as long as it remains GPL."
-msgstr ""
-"Эта тема распространяется по лицензии GPL. Это означает, что вы можете "
-"использовать его для всего, что вам угодно, пока это попадает под лицензию "
-"GPL."
-
-#: admin/about.php:119
-msgctxt "theme about page"
-msgid ""
-"This theme is provided “as is”. WPExplorer and Symple Workz LLC disclaim all "
-"warranties of any kind to the fullest extent of the law. You agree that your "
-"use of the theme is at your own risk."
-msgstr ""
-"Эта тема предоставляется на условиях «как есть». WPExplorer и Symple Workz "
-"LLC отказываются от всех гарантий любого рода в полном соответствии с "
-"законом. Вы соглашаетесь с тем, что используете тему на свой страх и риск."
-
-#: admin/about.php:125
-msgctxt "theme about page"
-msgid "This theme was created by:"
-msgstr "Эта тема была создана:"
-
-#: admin/about.php:175
-msgctxt "theme about page"
-msgid "Total Drag & Drop Theme"
-msgstr "Шаблон с полной поддержкой функции перетаскивания"
-
-#: admin/about.php:159
-msgctxt "theme about page"
-msgid "Useful Links"
-msgstr "Полезные ссылки"
-
-#: admin/about.php:127
-msgctxt "theme about page"
-msgid "We work hard to develop, support and update this theme."
-msgstr "Мы усердно работаем над развитием, поддержкой и обновлением этой темы."
-
-#: inc/customizer/general.php:13
-msgid "Theme Settings"
-msgstr "Настройки темы"
-
-#: partials/none.php:22
-msgid "There aren't any posts currently published in this category."
-msgstr "В настоящее время в этой категории нет опубликованных сообщений."
-
-#: partials/none.php:26
-msgid "There aren't any posts currently published under this tag."
-msgstr "В настоящее время нет сообщений, опубликованных c этой меткой."
-
-#: partials/none.php:24
-msgid "There aren't any posts currently published under this taxonomy."
-msgstr "В настоящее время в этой таксономии нет публикаций."
-
-#: searchform.php:18 partials/mobile-search.php:18
-msgid "To search type and hit enter"
-msgstr "Введите запрос и нажмите Ввод"
-
-#: inc/customizer/general.php:49
+#: ../inc/customizer/general.php:49
 msgid "Top Navigation"
 msgstr "Верхняя навигация"
 
-#: partials/single/meta.php:23 partials/entry/meta.php:25
-msgid "Under"
-msgstr "Рубрика:"
+#: ../inc/customizer/general.php:63
+msgid "Footer Widgets"
+msgstr "Виджеты нижнего колонтитула"
 
-#: 404.php:18
-msgid "Unfortunately, the page you tried accessing could not be retrieved."
-msgstr ""
-"К сожалению, ваш доступ к странице к которой вы пытались обратиться, не "
-"подтвержден."
+#: ../inc/customizer/general.php:77
+msgid "Social Links"
+msgstr "Социальные ссылки"
 
-#: functions.php:252
-msgid "Widgets in this area are used in the first footer region."
-msgstr ""
-"Виджеты в этой области используются в первой области нижнего колонтитула."
+#: ../inc/customizer/general.php:91
+msgid "Read More Link"
+msgstr "Читать дальше Ссылка"
 
-#: functions.php:263
-msgid "Widgets in this area are used in the second footer region."
-msgstr ""
-"Виджеты в этой области используются во второй области нижнего колонтитула."
+#: ../inc/customizer/general.php:105
+msgid "Featured Image on Posts"
+msgstr "Рекомендуемое изображение в сообщениях"
 
-#: functions.php:238
-msgid "Widgets in this area are used in the sidebar region."
-msgstr "Виджеты этой области используются в боковой панели."
+#: ../inc/customizer/general.php:119
+msgid "Display Post tags?"
+msgstr "Отображать теги сообщений?"
 
-#: functions.php:274
-msgid "Widgets in this area are used in the third footer region."
-msgstr ""
-"Виджеты в этой области используются в третьей области нижнего колонтитула."
+#: ../inc/customizer/general.php:133
+msgid "Entries Display?"
+msgstr "Отображение записей?"
 
-#: inc/customizer/general.php:216
-msgid "Width"
-msgstr "Ширина"
+#: ../inc/customizer/general.php:138
+msgid "Custom Excerpt"
+msgstr "Пользовательская выдержка"
 
-#: partials/single/meta.php:30 partials/entry/meta.php:32
-msgid "With"
-msgstr "С"
+#: ../inc/customizer/general.php:139
+msgid "Full Post Content"
+msgstr "Полное содержание поста"
 
-#: admin/dashboard-feed.php:9
-msgid "WordPress Articles"
-msgstr "Статьи о WordPress"
-
-#: inc/customizer/general.php:140
+#: ../inc/customizer/general.php:140
 msgid "WordPress Excerpt"
 msgstr "Выдержка из WordPress"
 
-#. Name of the theme
-msgid "WPEX Blogger"
-msgstr "WPEX Блогер"
+#: ../inc/customizer/general.php:152
+msgid "Excerpt Length"
+msgstr "Длина отрывка"
 
-#. Author of the theme
-msgid "WPExplorer"
-msgstr "WPExplorer"
+#: ../inc/customizer/general.php:165
+msgid "Custom Copyright"
+msgstr "Пользовательское авторское право"
 
-#: partials/single/author-bio.php:25
-#, php-format
-msgid "Written by %s"
-msgstr "Добавил: %s"
+#: ../inc/customizer/general.php:173
+msgid "Social Options"
+msgstr "Социальные возможности"
 
-#: inc/customizer/general.php:199
+#: ../inc/customizer/general.php:196
+msgid "Image Sizes"
+msgstr "Размеры изображения"
+
+#: ../inc/customizer/general.php:197
 msgid ""
 "You can define your image cropping settings for the theme from here. Note: "
 "You must use a regeneration plugin to crop old images on your site because "
@@ -438,6 +191,233 @@ msgstr ""
 "изображений на вашем сайте, потому что WordPress применяет обрезку только к "
 "вновь загруженным изображениям."
 
-#: inc/comments-callback.php:65
-msgid "Your comment is awaiting moderation."
-msgstr "Ваш комментарий ожидает модерации."
+#: ../inc/customizer/general.php:201
+msgid "Entry"
+msgstr "Запись"
+
+#: ../inc/customizer/general.php:202
+msgid "Post"
+msgstr "Запись"
+
+#: ../inc/customizer/general.php:214
+msgid "Width"
+msgstr "Ширина"
+
+#: ../inc/customizer/general.php:227
+msgid "Height"
+msgstr "Высота"
+
+#: ../inc/helpers.php:243
+msgid "Newer Posts"
+msgstr "Новые записи"
+
+#: ../inc/helpers.php:245
+msgid "Older Posts"
+msgstr "Старые записи"
+
+#: ../inc/post-meta.php:19
+msgid "Post Video"
+msgstr "Опубликовать видео"
+
+#: ../inc/post-meta.php:34
+msgid "oEmbed Compatible Video URL:"
+msgstr "oВстроить URL-адрес совместимого видео:"
+
+#: ../partials/archive-header.php:29
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Результаты поиска для: %s"
+
+#: ../partials/archive-header.php:38
+msgid "Blog"
+msgstr "Блог"
+
+#: ../partials/edit-post.php:17
+msgid "Edit Post"
+msgstr "Редактировать пост"
+
+#: ../partials/entry/meta.php:19 ../partials/single/meta.php:17
+msgid "Posted on"
+msgstr "Опубликовано:"
+
+#: ../partials/entry/meta.php:25 ../partials/single/meta.php:23
+msgid "Under"
+msgstr "Рубрика:"
+
+#: ../partials/entry/meta.php:32 ../partials/single/meta.php:30
+msgid "With"
+msgstr "С"
+
+#: ../partials/entry/meta.php:33 ../partials/single/meta.php:31
+msgid "0 Comments"
+msgstr "Нету коментариев"
+
+#: ../partials/entry/meta.php:33 ../partials/single/meta.php:31
+msgid "1 Comment"
+msgstr "1 Коментарий"
+
+#: ../partials/entry/meta.php:33 ../partials/single/meta.php:31
+msgid "% Comments"
+msgstr "% Коментарии"
+
+#: ../partials/header/nav.php:27
+msgid "Menu"
+msgstr "Меню"
+
+#: ../partials/mobile-search.php:18 ../searchform.php:18
+msgid "To search type and hit enter"
+msgstr "Введите запрос и нажмите Ввод"
+
+#: ../partials/none.php:18
+msgid "No posts found."
+msgstr "Записей не найдено."
+
+#: ../partials/none.php:20
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with "
+"different keywords."
+msgstr ""
+"Извините, но по вашему запросу ничего не найдено. Пожалуйста, попробуйте еще "
+"раз, используя другие ключевые слова."
+
+#: ../partials/none.php:22
+msgid "There aren't any posts currently published in this category."
+msgstr "В настоящее время в этой категории нет опубликованных сообщений."
+
+#: ../partials/none.php:24
+msgid "There aren't any posts currently published under this taxonomy."
+msgstr "В настоящее время в этой таксономии нет публикаций."
+
+#: ../partials/none.php:26
+msgid "There aren't any posts currently published under this tag."
+msgstr "В настоящее время нет сообщений, опубликованных c этой меткой."
+
+#: ../partials/none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+msgstr "Похоже, мы не можем найти то, что вы ищете."
+
+#: ../partials/single/author-bio.php:25
+#, php-format
+msgid "Written by %s"
+msgstr "Добавил: %s"
+
+#: ../partials/single/post-tags.php:18
+msgid "Tagged:"
+msgstr "Метки:"
+
+#, php-format
+#~ msgctxt "1: date"
+#~ msgid "%1$s"
+#~ msgstr "%1$s"
+
+#~ msgid "Free WordPress Theme by WPExplorer"
+#~ msgstr "Бесплатная тема для WordPress от WPExplorer"
+
+#~ msgid "Fullwidth"
+#~ msgstr "На всю ширину"
+
+#~ msgid "https://www.wpexplorer.com/"
+#~ msgstr "https://www.wpexplorer.com/"
+
+#~ msgid "https://www.wpexplorer.com/blogger-free-wordpress-theme/"
+#~ msgstr "https://www.wpexplorer.com/blogger-free-wordpress-theme/"
+
+#~ msgctxt "theme about page"
+#~ msgid ""
+#~ "A back-link to our website is very much appreciated or you can follow us "
+#~ "via our social media!"
+#~ msgstr ""
+#~ "Очень приветствуется обратная ссылка на наш веб-сайт, или вы можете "
+#~ "следить за нашими новостями подписавшись на нас в социальных сетях!"
+
+#~ msgctxt "theme about page"
+#~ msgid "A free WordPress theme by WPExplorer"
+#~ msgstr "Бесплатная тема для WordPress от WPExplorer"
+
+#~ msgctxt "theme about page"
+#~ msgid ""
+#~ "Below you will find some useful links to get you started with this theme."
+#~ msgstr ""
+#~ "Ниже вы найдете несколько полезных ссылок, которые помогут вам начать "
+#~ "работу с этой темой."
+
+#~ msgctxt "theme about page"
+#~ msgid ""
+#~ "Check out our most advanced (yet easy to use) and flexible theme to date."
+#~ msgstr ""
+#~ "Оцените нашу самую продвинутую (но простую в использовании) и гибкую тему "
+#~ "на сегодняшний день."
+
+#~ msgctxt "theme about page"
+#~ msgid "Credits"
+#~ msgstr "Признательность"
+
+#~ msgctxt "theme about page"
+#~ msgid "Customize Your Site"
+#~ msgstr "Настройте свой сайт"
+
+#~ msgctxt "theme about page"
+#~ msgid "Disclaimer"
+#~ msgstr "Заявление об ограничении ответственности"
+
+#~ msgctxt "theme about page"
+#~ msgid "Getting Started"
+#~ msgstr "Приступаем к работе"
+
+#~ msgctxt "theme about page"
+#~ msgid "GPL License"
+#~ msgstr "GPL-лицензия"
+
+#~ msgctxt "theme about page"
+#~ msgid "Report a Bug"
+#~ msgstr "Сообщить об ошибке"
+
+#~ msgctxt "theme about page"
+#~ msgid "Theme Details"
+#~ msgstr "Подробно о Теме"
+
+#~ msgctxt "theme about page"
+#~ msgid ""
+#~ "This theme is licensed under the GPL license. This means you can use it "
+#~ "for anything you like as long as it remains GPL."
+#~ msgstr ""
+#~ "Эта тема распространяется по лицензии GPL. Это означает, что вы можете "
+#~ "использовать его для всего, что вам угодно, пока это попадает под "
+#~ "лицензию GPL."
+
+#~ msgctxt "theme about page"
+#~ msgid ""
+#~ "This theme is provided “as is”. WPExplorer and Symple Workz LLC disclaim "
+#~ "all warranties of any kind to the fullest extent of the law. You agree "
+#~ "that your use of the theme is at your own risk."
+#~ msgstr ""
+#~ "Эта тема предоставляется на условиях «как есть». WPExplorer и Symple "
+#~ "Workz LLC отказываются от всех гарантий любого рода в полном соответствии "
+#~ "с законом. Вы соглашаетесь с тем, что используете тему на свой страх и "
+#~ "риск."
+
+#~ msgctxt "theme about page"
+#~ msgid "This theme was created by:"
+#~ msgstr "Эта тема была создана:"
+
+#~ msgctxt "theme about page"
+#~ msgid "Total Drag & Drop Theme"
+#~ msgstr "Шаблон с полной поддержкой функции перетаскивания"
+
+#~ msgctxt "theme about page"
+#~ msgid "Useful Links"
+#~ msgstr "Полезные ссылки"
+
+#~ msgctxt "theme about page"
+#~ msgid "We work hard to develop, support and update this theme."
+#~ msgstr ""
+#~ "Мы усердно работаем над развитием, поддержкой и обновлением этой темы."
+
+#~ msgid "WordPress Articles"
+#~ msgstr "Статьи о WordPress"
+
+#~ msgid "WPEX Blogger"
+#~ msgstr "WPEX Блогер"
+
+#~ msgid "WPExplorer"
+#~ msgstr "WPExplorer"

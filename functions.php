@@ -12,15 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-function wpex_theme_info() {
-	return array(
-		'name'    => 'WPEX Blogger',
-		'slug'    => 'wpex-blogger',
-		'url'     => 'https://www.wpexplorer.com/blogger-free-wordpress-theme/',
-		'support' => 'https://github.com/wpexplorer/wpex-blogger/issues',
-	);
-}
-
 if ( ! class_exists( 'WPEX_Blogger_Theme' ) ) {
 
 	class WPEX_Blogger_Theme {
@@ -84,16 +75,6 @@ if ( ! class_exists( 'WPEX_Blogger_Theme' ) ) {
 			require_once WPEX_INCLUDES_DIR . 'post-meta.php';
 			require_once WPEX_INCLUDES_DIR . 'comments-callback.php';
 			require_once WPEX_INCLUDES_DIR . 'customizer/general.php';
-
-			if ( is_admin() ) {
-				if ( ! defined( 'WPEX_DISABLE_THEME_DASHBOARD_FEEDS' ) ) {
-					require_once get_parent_theme_file_path( '/admin/dashboard-feed.php' );
-				}
-				if ( ! defined( 'WPEX_DISABLE_THEME_ABOUT_PAGE' ) ) {
-					require_once get_parent_theme_file_path( '/admin/about.php' );
-				}
-			}
-
 		}
 
 		/**

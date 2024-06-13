@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $copy = get_theme_mod( 'wpex_copyright' );
-$copy = $copy ? $copy : '<a href="https://www.wpexplorer.com/blogger-free-wordpress-theme/" title="Blogger WordPress Theme">Blogger Theme</a> by <a href="https://www.wpexplorer.com" title="WPExplorer Themes">WPExplorer</a> Powered by <a href="https://wordpress.org" title="WordPress">WordPress</a>';  ?>
+$copy = $copy ? $copy : '<a href="https://www.wpexplorer.com/blogger-free-wordpress-theme/" title="Blogger WordPress Theme">Blogger Theme</a> by <a href="https://www.wpexplorer.com">WPExplorer</a> Powered by <a href="https://wordpress.org" title="WordPress">WordPress</a>';  ?>
 
 <footer id="copyright-wrap" class="clr">
 
